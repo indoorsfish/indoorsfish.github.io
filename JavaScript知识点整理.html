@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript知识点整理</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+	<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+         <![endif]-->
+	
+     </head>
+     <body>
+    <header>
+ 		<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navgation">
+ 			<div class="container">
+ 				<div class="navbar-header">
+ 					<button type="button" class="navbar-toggle" data-toggle="collapse" 
+	 					data-target="#example-navbar-collapse">
+	 					<span class="sr-only">切换导航</span>
+	 					<sapn class="icon-bar"></sapn>
+	 					<span class="icon-bar"></span>
+	 					<span class="icon-bar"></span>
+	 				</button>
+ 					<span><a class="navbar-brand" href="index.html"> 朱厚强的Blog </a>
+ 						<i><img src="icon/logo.png" alt="logo"></i>
+ 					</span>
+ 		 	 	</div>
+ 				<div class="collapse navbar-collapse" id="example-navbar-collapse">
+	 				<ul class="nav navbar-nav">
+	 					<li><a href="index.html"><span class="glyphicon glyphicon-home" > 首页</span></a></li>
+	 					<li><a href="index.html" class="html-btn">HTML</a></li>
+	 					<li><a href="index.html" class="css-btn">CSS</a></li>
+	 					<li><a href="index.html" class="javascript-btn jquery-btn">Js/JQuery</a></li>
+	 					<li><a href="index.html" class="other-btn">其他</a></li>
+	 					<li  class="dropdown" >
+ 						<a  href="#" class="dropdown-toggle" data-toggle="dropdown">
+ 							浏览器下载<span class="caret"></span> </a>
+ 							<ul class="dropdown-menu" role="menu">
+ 								<li class="dropdown-header">pc端</li>
+ 								<li role="presentation"><a rel="nofollow" href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads">IE11</a></li>
+ 								<li role="presentation"><a rel="nofollow" href="http://www.google.cn/chrome/browser/desktop/">Chrome</a></li>
+ 								<li role="presentation"><a rel="nofollow" href="http://www.firefox.com.cn/">Firefox</a></li>
+ 								<li role="presentation" class="divider"></li>
+ 								<li role="presentation" class="dropdown-header">移动端</li>
+ 								<li role="presentation"><a rel="nofollow" href="https://support.apple.com/zh_CN/downloads/safari">Safary</a></li>
+ 								<li role="presentation"><a rel="nofollow" href="http://www.opera.com/zh-cn">Opera</a></li>
+ 							</ul>
+ 						</li>
+ 						<li><a href="留言板.html">留言板</a></li>
+ 					</ul>    
+ 				</div>
+ 			</div>    
+ 		</nav>
+ 	</header>
+
+
+ 	<!-- 灯开关 -->
+ <div class="deng"  title="白天模式/夜间模式">
+      <input type="checkbox" id="deng" />
+      <label class="slider-v1" for="deng"></label>
+  </div>
+
+<!--  	主体 -->
+     	<div class="main container">
+			<div class="Breadcrumbs">
+					<ol class="breadcrumb">
+				  	 	<li><a href="index.html">首页</a></li>
+			  		 	<li><a href="blog-all.html">全部</a></li>
+				   		<li><a href="blog-all.html">JavaScript</a></li>
+				  		<li class="active">JavaScript知识点整理</li>
+					</ol>
+			</div>
+			<div class="row">
+			<div class="article col-sm-9">
+				<div class="page-header">
+					<h1>JavaScript知识点整理</h1>
+					<p class="posted-date text-muted">
+ 						<span class="glyphicon glyphicon-time"></span> 2018年1月13日</p> 
+				</div>
+
+				<!-- 文章主要内容 -->
+				<div class="detail-article">
+				<h2>基本知识点</h2>
+				<p>JavaScript 一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。</p>
+					<p>JavaScript5种基本数据类型:undefined / null /  boolean / number / string。</p>
+					<p>JavaScript1种复杂的数据类型--Object类型，Object类型是所有其他对象的基类。</p>
+					<p>注意：JavaScript并不区分浮点数和整数，都是用number来表示。</p>
+					<h3>控制语句</h3>
+					<p>常用的并不多：if语句、switch语句、for语句、while语句、for-in语句。</p>
+					<h3>函数</h3>
+					<p>函数就是一小段逻辑的封装。JavaScript函数相对其他语言来说有很大不同。JavaScript函数既可以作为参数，也可以作为返回值。<br>
+					此外JavaScript函数可以接受任意数量的参数，并且可以通过arguments对象来访问这些参数。</p>
+					<h2>变量、作用域、内存问题</h2>
+					<h3>变量</h3>
+					<p>JavaScript变量分为两种：基本类型和引用类型。其中基本类型就是前面提到的5种基本数据类型，引用类型就是前面提到的Object以及基于它的其他复杂数据类型。<br>
+					✦ 基本类型：在内存中占据实际大小的空间，赋值的时候，会在内存中创建一份新的副本。<br>
+					✦ 引用类型：指向对象的指针而不是对象本身，赋值的时候，只是创建了一个新的指针指向对象。</p>
+					<div>
+					<img src="images/变量内存分配.png" alt="变量内存分配.png">
+					</div>
+					<h3>变量内存分配</h3>
+					<p>基本类型在内存中是实际的值；而引用类型在内存中就是一个指针，指向一个对象，多个引用类型可能同时指向同一个对象。</p>
+					<p>如何确定某个变量是哪种数据类型？<br>
+					确定一个变量是哪种基本类型用typeof操作符。<br>
+					确定一个变量是哪种引用类型用instanceof操作符。</p>
+					<h3>作用域</h3>
+					<p>变量是在某个特定的作用域中声明的，作用域决定了这些变量的生命周期，以及哪些代码可以访问其中的变量。<br>
+					JavaScript作用域只包括全局作用域和函数作用域，并不包含块级作用域！</p>
+					<p>作用域是可以嵌套的，从而形成作用域链。由于作用域链的存在，可以让变量的查找向上追溯，即子函数可以访问父函数的作用域=&gt;祖先函数的作用域=&gt;直到全局作用域，这种函数我们也称为闭包。</p>
+					<pre>var color = "blue";
+
+function changeColor() {
+    var anotherColor = "red";
+
+    function swapColors() {
+        var tempColor = anotherColor;
+        anotherColor = color;
+        color = tempColor;
+        // 这里可以访问color、anotherColor、tempColor 
+    }
+    // 这里可以访问color、anotherColor，但不能访问tempColor
+    swapColors();
+}
+// 这里只能访问color、changeColor();
+					</pre>
+					<p>如下图所示，每个作用域能够访问到的变量以及嵌套的作用域可向上追溯。</p>
+					<br>
+					<div>
+					<img src="images/作用域链.png" alt="作用域链.png">
+					<p class="image-caption">作用域链</p>
+					</div>
+					
+					<h2>引用类型</h2>
+					<p>Object是唯一的复杂数据类型，引用类型都是从Object类型上继承而来。<br>
+					✦ Array：数组类型<br>
+					✦ Date：日期类型<br>
+					✦ RegExp：正则表达式类型<br>
+					✦ 等等...<br>
+					注：由于Function是引用类型，而JavaScript又可以往引用类型上加属性和方法。同理，函数也可以！这也是JavaScript函数强大和复杂的地方。也就是说：函数也可以拥有自定义方法和属性！</p>
+					<p>此外，JavaScript对前面提到的5种基本类型的其中3种也做了引用类型封装，分别是Boolean、Number、String，但其实使用不多。</p>
+					<p>在所有代码执行之前，作用域就内置了两个对象，分别是Global和Math，其中浏览器的Global就是window！</p>
+
+					<h2>面向对象编程</h2>
+					<p>JavaScript本身并没有类和接口的概念，面向对象都是基于原型实现的。<br>
+					面向对象的两个问题：<br>
+					✦ 如何定义一个类？<br>
+					✦ 如何实现类的继承</p>
+					<h3>定义一个类</h3>
+					<p>我们使用构造函数+原型的方式来定义一个类。</p>
+					<p>使用构造函数创建自定义类型，然后使用new操作符来创建类的实例，但是构造函数上的方法和属性在每个示例上都存在，不能共享，于是我们引入原型来实现方法和属性的共享。</p>
+					<div>
+					<img src="images/原型.png" alt="原型.png">
+					<p class="image-caption">原型</p>
+					</div>
+					<p>将需要共享的方法和属性定义在原型上，把专属于实例的方法和属性放到构造函数中。我们就通过构造函数+原型的方式定义了一个类。</p>
+					<pre>// 构造函数
+function Person(name, age, job) {
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.friends = ["Shelby", "Court"];
+
+}
+// 原型
+Person.prototype = {
+    constructor: Person,
+    sayName: function() {
+        return this.name;
+    }
+}
+// 实例化
+var person1 = new Person("Nicholas", 29, "Software Engineer");
+var person2 = new Person("Greg", 27, "Doctor");
+
+person1.friends.push("Van");
+alert(person1.friends);                     //输出"Shelby,Count,Van"
+alert(person2.friends);                     //输出"Shelby,Count"
+alert(person1.friends === person2.friends);     //输出false
+alert(person1.sayName === person2.sayName);        //输出true
+					</pre>
+					<h3>实现继承</h3>
+					<p>前文讲了如何定义一个类，那么我们定义一个父类，一个子类。<br>
+					如何让子类继承父类呢？JavaScript通过原型链来实现继承！<br>
+					如何构建原型链呢？将父类实例赋值给子类构造函数的原型即可。</p>
+					<div>
+					<img src="images/原型链继承.png" alt="原型链继承.png">
+					</div>
+					<div class="image-caption">原型链继承</div>
+
+					<p>构建原型链之后，子类就可以访问父类的所有属性和方法！</p>
+					<pre>// 父类
+function SuperType() {
+    this.property = true;
+}
+SuperType.prototype.getSuperValue = function() {
+    return this.property;
+};
+
+// 子类
+function SubType() {
+    this.subproperty = false;
+}
+
+//子类继承父类
+SubType.prototype = new SuperType();
+
+//给子类添加新方法
+SubType.prototype.getSubValue = function() {
+    return this.subproperty;
+};
+//重写父类的方法
+SubType.prototype.getSuperValue = function() {
+    return false;
+};
+
+// 实例化
+var instance = new SubType();
+console.log(instance.getSuperValue()); //输出false
+					</pre>
+
+					<h2>函数表达式</h2>
+					<p>JavaScript中有两种定义函数的方式：函数声明和函数表达式。<br>
+					使用函数表达式无须对函数命名，从而实现动态编程，也即匿名函数。</p>
+					<h3>递归</h3>
+					<p>递归是一种很常见的算法，经典例子就是阶乘。</p>
+					<pre>// 最佳实践，函数表达式
+var factorial = (function f(num) {
+    if (num &lt;= 1) {
+        return 1;
+    } else {
+        return num * f(num - 1);
+    }
+});
+
+// 缺点：
+// factorial存在被修改的可能
+// 导致 return num * factorial(num - 1) 报错
+function factorial(num) {
+    if (num &lt;= 1) {
+        return 1;
+    } else {
+        return num * factorial(num - 1);
+    }
+}
+
+// 缺点：
+// arguments.callee，规范已经不推荐使用
+function factorial(num) {
+    if (num &lt;= 1) {
+        return 1;
+    } else {
+        return num * arguments.callee(num - 1);
+    }
+}
+					</pre>
+					<p>递归就是这样，好多人还在使用arguments.callee的方式，改回函数表达式的方式吧，这才是最佳实践。</p>
+					<p>递归将其分为两个步骤就会清晰很多了。<br>
+					✦ 边界条件，通常是if-else。<br>
+					✦ 递归调用。<br></p>
+					<h3>闭包</h3>
+					<p>很多人经常觉得闭包很复杂，其实不然。</p>
+					<p>那么闭包是什么呢？如果一个函数可以访问另一个函数作用域中的变量，那么前者就是闭包。由于JavaScript函数可以返回函数，自然，创建闭包的常用方式就是在一个函数内部创建另一个函数！<br>
+					在父函数中定义子函数就可以创建闭包，而子函数可以访问父函数的作用域。<br>
+					我们通常是因为被闭包坑了，才会被闭包吓到，尤其是面试题里一堆闭包。</p>
+					<p>闭包的定义前面提了，如何创建闭包也说了，那么我们说说闭包的缺陷以及如何解决？</p>
+					<pre>/* 我们通过subFuncs返回函数数组，然后分别调用执行 */
+
+// 返回函数的数组subFuncs，而这些函数对superFunc的变量有引用
+// 这就是一个典型的闭包
+// 那么有什么问题呢？
+// 当我们回头执行subFuncs中的函数的时候，我们得到的i其实一直都是10，为什么？
+// 因为当我们返回subFuncs之后，superFunc中的i=10
+// 所以当执行subFuncs中的函数的时候，输出i都为10。
+// 
+// 以上，就是闭包最大的坑，一句话理解就是：
+// 子函数对父函数变量的引用，是父函数运行结束之后的状态
+function superFunc() {
+    var subFuncs = new Array();
+    for (var i = 0; i &lt; 10; i++) {
+        subFuncs[i] = function() {
+            return i;
+        };
+    }
+
+    return subFuncs;
+}
+
+// 那么，如何解决上诉的闭包坑呢？
+// 其实原理很简单，既然闭包坑的本质是：子函数对父函数变量的引用，是父函数运行结束之后的状态
+// 那么我们解决这个问题的方式就是：子函数对父函数变量的引用，使用运行时的状态
+// 如何做呢？
+// 在函数表达式的基础上，加上自执行即可。
+function superFunc() {
+    var subFuncs = new Array();
+    for (var i = 0; i &lt; 10; i++) {
+        subFuncs[i] = function(num) {
+            return function() {
+                return num;
+            };
+        }(i);
+    }
+    return subFuncs;
+}
+					</pre>
+					<p>综上，闭包本身不是什么复杂的机制，就是子函数可以访问父函数的作用域。<br>
+					而由于JavaScript函数的特殊性，我们可以返回函数，如果我们将作为闭包的函数返回，那么该函数引用的父函数变量是父函数运行结束之后的状态，而不是运行时的状态，这便是闭包最大的坑。而为了解决这个坑，我们常用的方式就是让函数表达式自执行。<br>
+					此外，由于闭包引用了祖先函数的作用域，所以滥用闭包会有内存问题。</p>
+					<p>那么闭包有什么用处呢？<br>
+					主要是封装吧...</p>
+					<h3>封装</h3>
+					<p>闭包可以封装私有变量或者封装块级作用域。<br>
+					➙ 封装块级作用域<br>
+					JavaScript并没有块级作用域的概念，只有全局作用域和函数作用域，那么如果想要创建块级作用域的话，我们可以通过闭包来模拟。<br>
+					创建并立即调用一个函数，就可以封装一个块级作用域。该函数可以立即执行其中的代码，内部变量执行结束就会被立即销毁。</p>
+					<pre>function outputNumbers(count) {
+    // 在函数作用域下，利用闭包封装块级作用域
+    // 这样的话，i在外部不可用，便有了类似块级作用域
+    (function() {
+        for (var i = 0; i &lt; count; i++) {
+            alert(i);
+        }
+    })();
+
+    alert(i); //导致一个错误! 
+}
+
+// 在全局作用域下，利用闭包封装块级作用域
+// 这样的话，代码块不会对全局作用域造成污染
+(function() {
+    var now = new Date();
+
+    if (now.getMonth() == 0 &amp;&amp; now.getDate() == 1) {
+        alert("Happy new year!");
+    }
+})();
+
+// 封装块级作用域的核心就是这个：函数表达式 + 自执行！
+(function() {
+    //这里是块级作用域
+})();
+					</pre>
+					<!-- 文章结束 -->
+					<hr>	
+						<p></p>
+					<p>标签：
+							<button class="btn btn-warning btn-xs"><a href="">javascript<span class="badge">1</span></a></button> 	
+						 <div class="share">
+						<div class="good"><span class="glyphicon glyphicon-thumbs-up"></span><br><span>2</span>
+						</div>	
+					 </div>
+						 <div class="talk">
+						 	<h2>评论：</h2>
+						 	<hr>
+						 	<form action="#">
+						 	名字：<input type="text"><br><br>
+						 	内容：<textarea name="" id="" ></textarea><br><br>
+						 	<input type="submit">
+						 	</form>
+
+						 </div>
+					</div>
+
+		  		</div>	
+				<!-- 侧边栏 -->
+				<aside class="container col-sm-3">
+					<div class="intro">
+						<div class="head-icon"><img src="icon/head-icon.jpg"  class="img-circle"  		alt="我的头像">
+							<h3>朱厚强<br></h3>
+							<em>一名兴趣使然的Web Designer</em>
+						</div><br>
+						<div class="contact">
+							<ul>
+								<li><a href="weixin.html" target="_blank"  class="contact-1" ></a></li>
+								<li><a href="http://wpa.qq.com/msgrd?v=3&uin=245773708&site=qq&menu=yes" title="qq：245773708" class="contact-2"></a></li>
+								<li><a href="#" title="微博账号被封" class="contact-3"></a></li>
+								<li><a href="https://github.com/indoorsfish" target="_blank" title="github" class="contact-4" ></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="weixin"><img src="images/wx.png" alt="weixins.png"></div>
+						<div class="tab">
+							<p class="lead">站内搜索&nbsp;<span class="glyphicon glyphicon-search" style="font-size: 14px;"></span></p>
+							<form action="blog-all.html" role="form">
+								<div class="form-group input-group">	
+									<input type="text"  class ="form-control" placeholder="search...">
+									<span class="input-group-btn">
+	                      			  <button class="btn btn-primary" type="button">搜索</button>
+	                    			</span>
+								</div>
+							</form>
+						</div>
+						<div class="tab"> 
+							<p class="lead">标签分类&nbsp;<span class="glyphicon glyphicon-tags" style="font-size: 14px;"></span></p>
+							<div class="summary"> 
+								<button class="btn btn-primary btn-xs"><a href="blog-all.html">全部</a><span class="badge"></span></button>
+								<button class="btn btn-success btn-xs html-btn"><a href="blog-all.html" >HTML</a><span class="badge"></span> </button>
+								<button class="btn btn-info btn-xs css-btn"><a href="blog-all.html" >CSS</a><span class="badge"></span> </button>
+								<button class="btn btn-warning btn-xs javascript-btn"><a href="blog-all.html" class="">JavaScript</a><span class="badge"></span></button> 
+								<button class="btn btn-danger btn-xs jquery-btn"><a href="blog-all.html" >JQuery</a><span class="badge"></span></button>
+								<button class="btn btn-primary btn-xs other-btn"><a href="blog-all.html">其他</a> </button>
+							</div>
+						</div>
+						<div class="tab">
+						  <p class="lead">日历&nbsp;<span class="glyphicon glyphicon-calendar" style="font-size: 14px;"></span></p>
+						<div id="calendar">
+						<a href="##" class="lastMonth"><</a> 
+						<a href="##" class="nextMonth">></a>
+						<h4>2013年10月</h4>
+						<ul class="week">
+							<li>日</li>
+							<li>一</li>
+							<li>二</li>
+							<li>三</li>
+							<li>四</li>
+							<li>五</li>
+							<li>六</li>
+						</ul>
+						<ul class="dateList"></ul>
+						</div>
+					 </div>
+				</aside>
+				</div>
+			</div>
+
+		<!-- 页脚部分 -->
+			<footer class="foot">
+				<p>Copyright© 2018 朱厚强的博客</p>
+			</footer>
+
+		<!-- 	小插件 -->
+			<div id="board">  
+				<p id="goTop"><span class="glyphicon glyphicon-chevron-up"></span></p> 
+				<p id="mb"><a href="留言板.html" title="留言版"><span class="glyphicon glyphicon-envelope"></span></a></p> 
+			</div>  
+
+
+	     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	     <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	     <script type="text/javascript" src="javascript/act.js"></script>
+	 </body>
+	 </html>

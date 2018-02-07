@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JQuery知识点整理</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+	<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+         <![endif]-->
+	
+     </head>
+     <body>
+  <header>
+ 		<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navgation">
+ 			<div class="container">
+ 				<div class="navbar-header">
+ 					<button type="button" class="navbar-toggle" data-toggle="collapse" 
+	 					data-target="#example-navbar-collapse">
+	 					<span class="sr-only">切换导航</span>
+	 					<sapn class="icon-bar"></sapn>
+	 					<span class="icon-bar"></span>
+	 					<span class="icon-bar"></span>
+	 				</button>
+ 					<span><a class="navbar-brand" href="index.html"> 朱厚强的Blog </a>
+ 						<i><img src="icon/logo.png" alt="logo"></i>
+ 					</span>
+ 		 	 	</div>
+ 				<div class="collapse navbar-collapse" id="example-navbar-collapse">
+	 				<ul class="nav navbar-nav">
+	 					<li><a href="index.html"><span class="glyphicon glyphicon-home" > 首页</span></a></li>
+	 					<li><a href="index.html" class="html-btn">HTML</a></li>
+	 					<li><a href="index.html" class="css-btn">CSS</a></li>
+	 					<li><a href="index.html" class="javascript-btn jquery-btn">Js/JQuery</a></li>
+	 					<li><a href="index.html" class="other-btn">其他</a></li>
+	 					<li  class="dropdown" >
+ 						<a  href="#" class="dropdown-toggle" data-toggle="dropdown">
+ 							浏览器下载<span class="caret"></span> </a>
+ 							<ul class="dropdown-menu" role="menu">
+ 								<li class="dropdown-header">pc端</li>
+ 								<li role="presentation"><a rel="nofollow" href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads">IE11</a></li>
+ 								<li role="presentation"><a rel="nofollow" href="http://www.google.cn/chrome/browser/desktop/">Chrome</a></li>
+ 								<li role="presentation"><a rel="nofollow" href="http://www.firefox.com.cn/">Firefox</a></li>
+ 								<li role="presentation" class="divider"></li>
+ 								<li role="presentation" class="dropdown-header">移动端</li>
+ 								<li role="presentation"><a rel="nofollow" href="https://support.apple.com/zh_CN/downloads/safari">Safary</a></li>
+ 								<li role="presentation"><a rel="nofollow" href="http://www.opera.com/zh-cn">Opera</a></li>
+ 							</ul>
+ 						</li>
+ 						<li><a href="留言板.html">留言板</a></li>
+ 					</ul>    
+ 				</div>
+ 			</div>    
+ 		</nav>
+ 	</header>
+
+ 	<!-- 灯开关 -->
+ <div class="deng"  title="白天模式/夜间模式">
+      <input type="checkbox" id="deng" />
+      <label class="slider-v1" for="deng"></label>
+  </div>
+
+ 	<!-- 主体 -->
+     	<div class="main container">
+			<div class="Breadcrumbs">
+					<ol class="breadcrumb">
+						<li><a href="index.html">首页</a></li>
+						<li><a href="blog-all.html">全部</a></li>
+						<li><a href="blog-all.html">JQuery</a></li>
+				  		<li class="active">JQuery知识点整理</li>
+					</ol>
+			</div>
+			<div class="row">
+			<div class="article col-sm-9">
+				<div class="page-header">
+					<h1>JQuery知识点整理</h1>
+					<p class="posted-date text-muted">
+ 						<span class="glyphicon glyphicon-time"></span> 2018年1月13日</p> 
+				</div>
+
+				<!-- 文章主要内容 -->
+				<div class="detail-article">
+				<h2>基本知识点：</h2>
+				<h3>概念</h3>
+					<p>什么是JQuery?</p>
+					<p>JQuery是一个基于 JavaScript的框架。它提供了丰富的选择器和大量的函数，可以方便的实现网页中各种动态的效果。迄今为止，已经有大量的JQuery插件和基于JQuery的UI框架（miniui、easyui、ligerui）。<strong>JS和JQuery的关系：可以互存，不能混用！</strong></p>
+					<p>JQuery的宗旨是：write less,do more!</p>
+					<p>基础语法是： $(selector).action() 例如： $("#test").hide()</p>	
+<pre>$(document).ready(function(){
+  $("#hide").click(function(){
+  $("p").hide();
+  });
+  $("#show").click(function(){
+  $("p").show();
+  });
+});</pre>
+					<p>主要方法：链式操作、回调函数、迭代器、延迟对象、队列……</p>
+				<h3>JQuery选择器</h3>	
+				<p>JQuery中的选择器允许您对 HTML 元素组或单个元素进行操作，
+				而选择器大多基于JavaScript和CSS，故不详细展开。</p>
+				<ol>
+					<li>元素选择器：例如 $("p") 选取 p 元素。</li>
+					<li>#ID 选择器：例如 $("p#demo") 选取所有 ID="demo" 的 p 元素。</li>
+					<li>.class 选择器：例如 $("p.intro") 选取所有 class="intro" 的 p 元素。</li>
+					<li>过滤选择器：例如 $("p:first") 第一个 p 元素。 </li>
+					<li>属性选择器：例如 $("[href$='.jpg']") 选取所有 href 值以 ".jpg" 结尾的元素。</li>
+					<li>通用选择器：例如 $("*") 选取所有元素。</li>
+					<li>自选择器：例如 $("this") 选取当前 HTML 元素。</li>
+				</ol>
+				<h3>JQuery效果方法</h3>	
+				<p>常用效果方法：隐藏、显示、切换，滑动，淡入淡出，以及动画。</p>
+				<small>注：效果方法若无声明，则参数皆可省，speed是执行速度，callback 参数是动画完成后所执行的函数名称</small><br>
+					<h4>隐藏和显示</h4>
+						<ol>
+							<li>hide() 方法用于隐藏可见元素。 语法: $(selector).hide(speed,callback);  </li>
+							<li>show() 方法用于显示可见元素。 语法: $(selector).show(speed,callback);</li>
+							<li>toggle() 方法用于切换(显-隐)元素。 语法: $(selector).toggle(speed,callback);</li>
+						</ol>
+					<h4>淡入淡出</h4>
+						<ol>
+							<li>fadeIn() 方法用于淡入已隐藏display：none的元素。 语法: $(selector).fadeIn(speed,callback);</li>
+							<li>fadeOut() 方法用于淡出可见元素。语法:$(selector).fadeOut(speed,callback);</li>
+							<li>fadeToggle() 方法可以在 fadeIn()和fadeOut() 方法之间进行切换。语法:
+							$(selector).fadeToggle(speed,easing,callback);   //easing分为"swing" - 在开头/结尾移动慢，在中间移动快和"linear" - 匀速移动</li>
+							<li>fadeTo() 方法允许渐变为给定的不透明度（值介于 0 与 1 之间）。语法:
+							$(selector).fadeTo(speed,opacity,callback);</li>
+						</ol>
+					<h4>滑动</h4>
+						<ol>
+							<li>slideDown()方法用于向下滑动display:none元素。语法:$(selector).slideDown(speed,callback);</li>
+							<li>slideUp() 方法用于向上滑动元素。语法: $(selector).slideUp(speed,callback);</li>
+							<li>slideToggle() 方法可在 slideDown()和slideUp() 方法之间进行切换。
+							 语法:$(selector).slideToggle(speed,callback);</li>
+						</ol>
+					<h4>动画animate() </h4>			
+					<p> animate() 方法用于创建自定义动画。<br>语法:$(selector).animate({params},speed,callback); //必需的 params 参数定义形成动画的 CSS 属性。</p>
+					<h4>停止动画stop() </h4>	
+					<p>stop() 方法用于停止动画或效果，在它们完成之前。适用于所有 jQuery 效果函数。<br>语法： $(selector).stop(stopAll,goToEnd); //可选的 stopAll 参数规定是否应该清除动画队列。默认是 false，即仅停止活动的动画，允许任何排入队列的动画向后执行。可选的 goToEnd 参数规定是否立即完成当前动画。默认是 false。</p>
+					<h4>回调函数</h4>	
+					<p>Callback 回调函数在当前动画 100% 完成之后执行。</p>
+					<pre>//p元素在1000ms后隐藏，并弹窗。
+$("p").hide(1000,function(){             
+	alert("The paragraph is now hidden");  
+});  
+</pre>
+					<h4>链式操作</h4>
+					<p>链接（chaining）的技术，允许我们在相同的元素上运行多条 jQuery 命令,不必多次查找相同的元素。</p>	
+					<pre>//设置id为p1的元素颜色为red，两秒后向上滑动隐藏，再两秒后向下滑动显示
+$("#p1").css("color","red").slideUp(2000).slideDown(2000);
+</pre><br>
+					<h3>JQuery DOM 操作</h3>
+					<h4>捕获和设置</h4>
+					<p>三个简单实用的用于 DOM 操作的 jQuery 方法:</p>
+					<ul>
+						<li>text() - 设置或返回所选元素的文本内容</li>
+						<li>html() - 设置或返回所选元素的内容（包括 HTML 标记）</li>
+						<li>val() - 设置或返回表单字段的值</li>
+					</ul>
+					<p>示例如下：</p>
+					<pre>
+$("#btn1").click(function(){
+  	$("#test").text("This is a Demo");     //设置text()内容
+   	alert("Text: " + $("#test").text());    //返回text()内容
+});
+
+$("#btn2").click(function(){
+  	$("#test").html("&lt;i&gt;This is a Demo&lt;/i&gt;");     //设置text()内容
+   	alert("Text: " + $("#test").html());    //返回text()内容
+});
+
+//val()同理
+</pre>
+					<p>属性获取和设置 :</p>
+<pre>//设置id为a1的元素的属性href的值，有参则是设置，无参则是获取
+$("#a1").attr("href","http://www.w3school.com.cn/jquery");
+
+//注：属性 ！= css css是设置style，属性是attr，style是attr的一种
+</pre><br>
+				<h4>添加元素</h4>
+				<p>如需添加元素和内容，一般可使用以下六种 jQuery 方法：</p>
+				<ul>
+					<li>append() - 在被选元素的结尾（里）插入内容 。例如：$("p").append("追加文本"); </li> 
+					<li>prepend() - 在被选元素的开头（里）插入内容。例如：$("p").prepend("在开头追加文本");</li>
+					<li>after(content) - 在被选元素之后（外）插入内容。例如：$("img").after("在后面添加文本");</li>
+					<li>before(content) - 在被选元素之前(外)插入内容 。例如：$("img").before("在前面添加文本");</li>
+					<li>insertbefore(元素）-在目标元素前面插入每个集合中匹配的内容。例如：$("在后面添加文本").insertbefore("img"); </li>
+					<li>insertafter（元素）-在目标元素后面插入每个集合中匹配的内容。例如：$("在前面添加文本").insertafter("img");</li>
+				</ul>
+				<p><small>注：内容都可以加标记,如$("p").append("&lt;p&gt;&lt;/p&gt;")</small></p><br>
+
+				<h4>删除元素</h4>
+				<p>如需删除元素和内容，一般可使用以下三种 jQuery 方法：</p>
+                 <ul> 
+                 	<li>remove() - 删除被选元素（及其子元素）。例如：$("#div1").remove();</li>
+                 	<li>empty() - 从被选元素中删除子元素。例如：$("#div1").empty();</li>
+                 	<li>detach() - 临时删除页面上的节点，节点上的数据与事件不会丢失。</li>
+                 </ul> 
+				<p><small>注：可接受一个参数，允许您对被删元素进行过滤。如$("p").remove(":contains('3')")</small></p><br>
+				<h4>替换元素</h4>
+				<p>替换元素和内容，其实就是整合了删除和添加的功能，一般可使用以下两种 jQuery 方法：</p>
+				 <ul> 
+                 	<li>replaceAll() 方法把被选元素替换为新的 HTML 元素。 例如：$("<span>Hello world!</span>").replaceAll("p:last");</li>
+                 	<li>replaceWith() 方法把被选元素替换为新的内容。例如：$("p:first").replaceWith("Hello world!");</li>
+                 </ul> <br>
+				<h4>操作 CSS</h4>
+				<p>jQuery 拥有若干进行 CSS 操作的方法:</p>
+				<ul>
+					<li>addClass() - 向被选元素添加一个或多个类 。例如：$("h1,h2,p").addClass("blue");//blue已定义的类</li> 
+					<li>removeClass() - 从被选元素删除一个或多个类。例如： $("h1,h2,p").removeClass("blue"); </li>
+					<li>toggleClass() - 对被选元素进行添加/删除类的切换操作。例如： $("h1,h2,p").toggleClass("blue"); //切换</li>
+					<li>css() - 设置或返回被选元素的一个或多个样式属性</li>
+					<ul>
+						<li>一个样式属性：$("p").css("background-color","yellow");</li>
+						<li>多个样式属性：$("p").css({"background-color":"yellow","font-size":"200%"});</li>
+					</ul>
+				</ul><br>
+				<h3>JQuery 遍历</h3>
+				<p>jQuery 提供了多种遍历 DOM 的方法。以下这些方法皆可以添加参数，缩小遍历范围。</p>
+				<h4>祖先遍历</h4>
+				<ul>
+					<li>parent() 方法返回被选元素的直接父元素。</li>
+					<li>parents() 方法返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (html)。</li>
+					<li>parentsUntil() 方法返回介于两个给定元素之间的所有祖先元素。</li>
+					<li>closest() 开始于当前元素，查找当前元素的父辈祖辈元素，找到一个匹配的就停止查找</li>
+				</ul>
+				<h4>后代遍历</h4>
+				<ul>
+					<li>children() 方法返回被选元素的所有直接子元素。（不含孙）</li>
+					<li>find() 方法返回被选元素的后代元素。返回所有的后代元素使用 "*" 选择器。 $("div").find("*");</li>
+					<li>has() 方法返回拥有匹配指定选择器的一个或多个元素在其内的所有元素。</li>
+				</ul>
+				<p>*区别：</p>
+				<ol><small>
+					<li>find()返回子元素节点及所有后代节点、has()返回选择器元素及其所有子元素节点</li>
+					<li>has（）过滤参数是子元素 、filter（）过滤条件是选择器元素自身</li>
+					<li>children（）只查找第一级的子节点 、find查找范围包括子节点的所有后代节点</li></small>
+				</ol>
+				<h4>遍历同级</h4>
+				<ul>
+					<li>siblings() 方法返回被选元素的所有同胞元素。</li>
+					<li>next() 方法返回被选元素的下一个同胞元素。 </li>
+					<li>nextAll() 方法返回被选元素之后的所有跟随的同胞元素。</li>
+					<li>nextUntil() 方法返回介于两个给定参数之间的所有跟随的同胞元素。</li>
+					<li>nextAll() 方法返回被选元素之后的所有跟随的同胞元素。</li>
+				</ul>
+				<p>*prev(), prevAll() 以及 prevUntil() 方法的工作方式与上面的方法类似，只不过方向相反而已：它们返
+				回的是前面的同胞元素（在 DOM 树中沿着同胞元素向后遍历，而不是向前）。</p>
+				<h4>过滤</h4>
+				<p>以上遍历方法皆可以添加参数，以缩小遍历范围，或使用以下方法亦可：</p>
+				<ul>
+					<li>first() 方法返回被选元素的首个元素。</li>
+					<li>last() 方法返回被选元素的最后一个元素。 </li>
+					<li>eq() 方法返回被选元素中带有指定索引号的元素，索引index从0开始。</li>
+					<li>filter() 方法允许规定一个标准，不匹配标准的元素会被从集合中删除，使匹配的元素会被返回。</li>
+					<li>not() 方法返回不匹配标准的所有元素，not() 方法与 filter() 相反。</li>
+				</ul>
+				<h3>JQuery 事件方法</h3>
+				<h4>一、鼠标事件</h4>
+				    <ul>
+				    	<li>click() 方法触发 click 事件，或规定当发生 click 事件时运行的函数。== mousedown()+mouseup()</li>
+				    	<li>mousedown() 方法触发 mousedown 事件，或添加当发生 mousedown 事件时运行的函数</li>
+				    	<li>mouseup() 方法触发 mouseup 事件，或添加当发生 mouseup 事件时运行的函数。</li>
+				    	<li>mouseenter() 方法触发 mouseenter 事件，或添加当发生 mouseenter 事件时运行的函数。</li>
+				    	<li>mouseleave() 方法触发 mouseleave 事件，或添加当发生 mouseleave 事件时运行的函数。</li>
+				    	<li>mouseover() 方法触发 mouseover 事件，或添加当发生 mouseover 事件时运行的函数。</li>
+				    	<li>mouseout() 方法触发 mouseout 事件，或添加当发生 mouseout 事件时运行的函数。</li>
+				    	<li>mousemove() 方法触发 mousemove 事件，或添加当发生 mousemove 事件时运行的函数。</li>
+				    </ul>
+				<h4>二、表单事件</h4>
+				<ul>
+					<li>focus()/blur()方法 当元素获得焦点/失焦时（当通过鼠标点击选中元素或通过 tab 键定位到元素时）</li>
+					<li>hover() 方法规定当鼠标指针悬停在被选元素上时要运行的两个函数。方法触发 mouseenter 和 mouseleave 事件。语法：$(selector).hover(inFunction,outFunction)</li>
+					<li>change()方法 当&lt;input&gt;元素、&lt;textarea&gt;和&lt;select&gt; 元素的值发生改变时，开发者可以通过change事件去监听这些改变的动作 </li>
+					<li>select（） 当textarea 或文本类型的 input 元素中的文本被选择时（提交表单时），会发生 select 事件。</li>
+					<li>submit() 提交表单是一个最常见的业务需求，监听提交表单的这个动作，具体能触发submit事件的行为</li>
+				</ul>
+				<h4>三、键盘事件</h4>
+				<ul>
+					<li>keydown()与keyup()事件  用户在一个元素上第一次按下键盘上字母键的时候，就会触发它
+                    理论上它可以绑定到任何元素，但keydown/keyup事件只是发送到具有焦点的元 
+                    素上，不同的浏览器中，可获得焦点的元素略有不同，但是表单元素总是能获   
+                    取焦点，所以对于此事件类型表单元素是最合适的。</li>
+					<li>keypress() 每次获取的内容都是之前输入的，当前输入的获取不到,这个跟keydown是非常相似.</li>
+				</ul>
+				<p>*区别keydown和keypress() ：1.keypress只能捕获单个字符，不能捕获组合键2.无法响应系统功能键（如delete，backspace）3.不区分小键盘和主键盘的数字字符4.KeyDown中返回的是键盘的代码（各键的状态）, 而KeyPress返回的是ASCII字符.</p>
+				<h4>四、事件对象(部分)</h4>
+				<ul>
+					<li>event.preventDefault() 阻止默认行为   == js中的return false</li>
+					<li>event.pageX 返回相对于文档左边缘的鼠标位置</li>
+					<li>event.pageY返回相对于文档上边缘的鼠标位置</li>
+					<li>sevent.target 返回哪个DOM元素触发了事件（触发函数的选择器）</li>
+					<li>event.currentTarget : 在事件冒泡过程中的当前DOM元素  </li>
+					<li>event.which 获取在鼠标单击时，单击的是鼠标的哪个键 左键1 中键2 右键3</li>
+					<li>event.type 返回哪种事件类型被触发</li>
+					<li>event.result 包含由被指定事件触发的事件处理程序返回的最后一个值</li>
+					<li>event.timeStamp 返回从 1970 年 1 月 1 日到事件被触发时的毫秒数</li>
+					<li>event.stopPropagation() 阻止事件向上冒泡到 DOM 树，阻止任何父处理程序被事件通知</li>
+				</ul>
+				<p>*区别this和event.target：js中事件是会冒泡的，所以this是可以变化的，但event.target不会变化，它永远是直接接受事件的目标DOM元素； this和event.target都是dom对象</p><br>
+				<h3>JQuery noConflict() 方法</h3>
+				<p>如果其他 JavaScript 框架也使用 $ 符号作为简写怎么办？jQuery 的团队考虑到了这个问题，并实现了 noConflict() 方法。</p>
+				<pre> //第一种方法：$更改为jq
+var jq = $.noConflict();            
+
+//第二种方法：把 $ 符号作为变量传递给 ready 方法。内部使用
+var jq = $.noConflict();              
+jQuery(document).ready(function($){    
+  $("button").click(function(){
+    $("p").text("jQuery 仍在运行！");
+  });   });
+</pre><br>
+				<h3>其他JQuery常见的事件和方法</h3>
+				<ul>
+					<li>on() 方法在被选元素及子元素上添加一个或多个事件处理程序，添加的事件处理程序适用于当前及未来的元素（比如由脚本动态创建的新元素），语法： $(selector).on(event,childSelector,data,function)  //推荐
+					</li>
+					<li>off() 方法通常用于移除通过 on() 方法添加的事件处理程序，选择器字符串必须匹配 on()方法传递的参数。语法：$(selector).off(event,selector,function(eventObj),map)</li>
+					<li>bind() 方法向被选元素添加一个或多个事件处理程序，以及当事件发生时运行的函数。</li>
+					<li>clone() 方法生成被选元素的副本，包含子节点、文本和属性。</li>
+					<li>one() 方法为被选元素添加一个或多个事件处理程序，相当于bind绑定但在执行一次之后将自动取消绑定</li>
+					<li>is() 方法用于查看选择的元素是否匹配选择器。</li>
+					<li>offset() 方法设置或返回被选元素相对于文档的偏移坐标。</li>
+					<li>scroll() 方法触发 scroll 事件，或规定当发生 scroll 事件时运行的函数。</li>
+					<li>scrollLeft()/scrollTop()方法设置或返回被选元素的水平/垂直滚动条位置。//返回数值</li>
+					<li>trigger() 方法触发被选元素上指定的事件以及事件的默认行为（比如表单提交）。</li>
+					<li>triggerHandler() 方法触发被选元素上指定的事件。不会引起事件的默认行为</li>
+					<li>$.proxy 方法接受一个已有的函数，并返回一个带特定上下文的新的函数。改变this指向</li>
+					<li>resize() 方法触发 resize 事件，或规定当改变this指向发生 focus 事件时运行的函数。</li>
+					<li>data() 方法向被选元素附加数据，或者从被选元素获取数据。移除用removeData()</li>
+					<li>each()方法为每个匹配元素规定要运行的函数,依次输出数组内所有对象==for包装的迭代器！</li>
+					<li>indexOf()方法获取到指定的字符串在字符串中第一次出现的位置，以e为例子从0开始。如果一开始就是e则返回0，如果第二个位置是e则返回1，如果搜完整个字符串都没有e则返回-1 。（大小写敏感）</li>
+					<li>$.parseJSON()函数用于将符合标准格式的的JSON字符串转为与之对应的JavaScript对象。</li>
+					<li>wrap()/wrapAll()/wrapInner()/unwrap() 包裹方法，作用分别是包装/整体包装, 会影响结构/内部包装/删除包装(删除父级)</li>
+					<li>jQuery.trim()函数用于去除字符串两端的空白字符</li>
+					<li>$.inArray()函数用于在数组中搜索指定的值，并返回其索引值。若数组中不存在该值，则返回-1。语法：jQuery.inArray( value, array ,[ fromIndex ] ) //从数组的指定索引位置开始查找，默认为 0</li>
+				</ul>
+				<h3>JQuery中的插件</h3>
+				<h4>扩展插件</h4>
+				<p>$.extend : 扩展工具方法下的插件形式  $.xxx() $.yyy()</p>
+				<p>$.fn.extend  :  扩展到JQ对象下的插件形式  $().xxx()  $().yyy()</p>
+				<h4>内部插件</h4>
+				<ul>
+					<li>Validate 表单验证</li>
+					<li>Accordion 创建折叠菜单</li>
+					<li>Autocomplete 搜索和过滤用户输入，返回预设列表</li>
+					<li>Growl 消息提醒</li>
+					<li>Password Validation 密码验证</li>
+					<li>Prettydate 表单验证</li>
+					<li>Tooltip 工具提示框</li>
+					<li>Treeview 树型菜单 导航</li>
+				</ul>
+				<!-- 文章结束 -->
+					<hr>	
+					<p></p>
+					<button class="btn lan btn-xs"><a href="">JQuery</a></button>&nbsp;&nbsp;<button class="btn dian btn-xs"><a href="">知识点整理</a></button>
+						
+					<div class="share">
+						<div class="good"><span class="glyphicon glyphicon-thumbs-up"></span><br><span>2</span>
+						</div>	
+					 </div>
+					 <div class="talk">
+					 	<h2>评论区：</h2>
+					 	<hr>
+					 	<form action="#">
+					 	名字：<input type="text"><br><br>
+					 	内容：<textarea name="" id="" ></textarea><br><br>
+					 	<input  type="submit">
+					 	</form>
+
+					 </div>
+				</div>
+
+	  		</div>	
+			<!-- 侧边栏 -->
+				<aside class="container col-sm-3">
+					<div class="intro">
+						<div class="head-icon"><img src="icon/head-icon.jpg"  class="img-circle"  		alt="我的头像">
+							<h3>朱厚强<br></h3>
+							<em>一名兴趣使然的Web Designer</em>
+						</div><br>
+						<div class="contact">
+							<ul>
+								<li><a href="weixin.html" target="_blank"  class="contact-1" ></a></li>
+								<li><a href="http://wpa.qq.com/msgrd?v=3&uin=245773708&site=qq&menu=yes" title="qq：245773708" class="contact-2"></a></li>
+								<li><a href="#" title="微博账号被封" class="contact-3"></a></li>
+								<li><a href="https://github.com/indoorsfish" target="_blank" title="github" class="contact-4" ></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="weixin"><img src="images/wx.png" alt="weixins.png"></div>
+						<div class="tab">
+							<p class="lead">站内搜索&nbsp;<span class="glyphicon glyphicon-search" style="font-size: 14px;"></span></p>
+							<form action="blog-all.html" role="form">
+								<div class="form-group input-group">	
+									<input type="text"  class ="form-control" placeholder="search...">
+									<span class="input-group-btn">
+	                      			  <button class="btn btn-primary" type="button">搜索</button>
+	                    			</span>
+								</div>
+							</form>
+						</div>
+						<div class="tab"> 
+							<p class="lead">标签分类&nbsp;<span class="glyphicon glyphicon-tags" style="font-size: 14px;"></span></p>
+							<div class="summary"> 
+								<button class="btn btn-primary btn-xs"><a href="blog-all.html">全部</a><span class="badge"></span></button>
+								<button class="btn btn-success btn-xs html-btn"><a href="blog-all.html" >HTML</a><span class="badge"></span> </button>
+								<button class="btn btn-info btn-xs css-btn"><a href="blog-all.html" >CSS</a><span class="badge"></span> </button>
+								<button class="btn btn-warning btn-xs javascript-btn"><a href="blog-all.html" class="">JavaScript</a><span class="badge"></span></button> 
+								<button class="btn btn-danger btn-xs jquery-btn"><a href="blog-all.html" >JQuery</a><span class="badge"></span></button>
+								<button class="btn btn-primary btn-xs other-btn"><a href="blog-all.html">其他</a> </button>
+							</div>
+						</div>
+						<div class="tab">
+						  <p class="lead">日历&nbsp;<span class="glyphicon glyphicon-calendar" style="font-size: 14px;"></span></p>
+						<div id="calendar">
+						<a href="##" class="lastMonth"><</a> 
+						<a href="##" class="nextMonth">></a>
+						<h4>2013年10月</h4>
+						<ul class="week">
+							<li>日</li>
+							<li>一</li>
+							<li>二</li>
+							<li>三</li>
+							<li>四</li>
+							<li>五</li>
+							<li>六</li>
+						</ul>
+						<ul class="dateList"></ul>
+						</div>
+					 </div>
+				</aside>
+			</div>
+		</div>
+		
+			<footer class="foot">
+				<p>Copyright© 2018 朱厚强的博客</p>
+			</footer>
+			<div id="board">  
+				<p id="goTop"><span class="glyphicon glyphicon-chevron-up"></span></p> 
+				<p id="mb"><a href="留言板.html" title="留言版"><span class="glyphicon glyphicon-envelope"></span></a></p> 
+			</div>  
+
+
+     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+     <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="javascript/act.js"></script>
+ </body>
+ </html>

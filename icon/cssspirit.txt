@@ -1,0 +1,3 @@
+.img{background:url(../images/img.png)  no-repeat;}
+.gith{height:21px;width:22px;background-position:0 -39px;}
+.qqq{height:21px;width:150px;background-position:0 0;}

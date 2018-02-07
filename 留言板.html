@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>留言板</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+	<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+         <![endif]-->
+         
+     </head>
+     <body>
+     	<header>
+     		<nav class="navbar navbar-default navbar-inverse  navbar-fixed-top" role="navgation">
+     			<div class="container">
+     				<div class="navbar-header">
+     					<button type="button" class="navbar-toggle" data-toggle="collapse" 
+     					data-target="#example-navbar-collapse">
+     					<span class="sr-only">切换导航</span>
+     					<sapn class="icon-bar"></sapn>
+     					<span class="icon-bar"></span>
+     					<span class="icon-bar"></span>
+     				</button>
+     				<span><a class="navbar-brand" href="index.html"> 朱厚强的Blog </a>
+     					<i><img src="icon/logo.png" alt="logo"></i>
+     				</span>
+     			</div>
+     			<div class="collapse navbar-collapse" id="example-navbar-collapse">
+     				<ul class="nav navbar-nav">
+     					<li><a href="index.html"><span class="glyphicon glyphicon-home" > 首页</span></a></li>
+     					<li><a href="blog-all.html" class="html-btn">HTML</a></li>
+     					<li><a href="blog-all.html" class="css-btn">CSS</a></li>
+     					<li><a href="blog-all.html" class="javascript-btn jquery-btn">Js/JQuery</a></li>
+     					<li><a href="blog-all.html" class="other-btn">其他</a></li>
+     					<li  class="dropdown" >
+     						<a  href="#" class="dropdown-toggle" data-toggle="dropdown">
+     							浏览器下载<span class="caret"></span> </a>
+     							<ul class="dropdown-menu" role="menu">
+     								<li class="disabled"><a rel="nofollow" href="#">pc端</a></li>
+     								<li><a rel="nofollow" href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads">IE11</a></li>
+     								<li><a rel="nofollow" href="http://www.google.cn/chrome/browser/desktop/">Chrome</a></li>
+     								<li><a rel="nofollow" href="http://www.firefox.com.cn/">Firefox</a></li>
+     								<li class="divider"></li>
+     								<li class="disabled"><a rel="nofollow" href="#">移动端</a></li>
+     								<li><a rel="nofollow" href="https://support.apple.com/zh_CN/downloads/safari">Safary</a></li>
+     								<li><a rel="nofollow" href="http://www.opera.com/zh-cn">Opera</a></li>
+     							</ul>
+     						</li>
+     						<li><a href="留言板.html">留言板</a></li>
+     					</ul>    
+     				</div>
+     			</div>    
+     		</nav>
+     	</header>
+
+     	<!-- 灯开关 -->
+     	<div class="deng"  title="白天模式/夜间模式">
+     		<input type="checkbox" id="deng" />
+     		<label class="slider-v1" for="deng"></label>
+     	</div>
+
+     	<!-- 主体 -->
+     	<div class="main container">
+     		
+     	    <div class="Breadcrumbs">
+                    <ol class="breadcrumb">
+                         <li><a href="blog-index.html">首页</a></li>
+                         <li>留言版</li>
+                    </ol>
+               </div>
+     		<div class="row">
+     			<div class="article col-sm-9">
+     				<header class="message">
+     					<h1>留言版<br><small>扯谈、吐槽、表扬、鼓励想说啥就说啥</small></h1>
+     				</header>
+     				<button class="btn btn-success"><b>立即留言</b><span class="glyphicon glyphicon-pencil" style="color: #fff;"></span></button>
+     				
+     				<form action="#"  class="form-horizontal message-form" role="form">
+     					<fieldset>
+     						<legend></legend>
+     						<div class="form-group">
+     							<label for="name" class="col-sm-2 control-label">昵称</label>
+     							<div class="col-sm-10">
+     								<input type="text" class="form-control"  id="fname" placeholder="请输入昵称">
+     							</div>
+     						</div>
+     						<div class="form-group">
+     							<label for="content" class="col-sm-2 control-label" >留言内容</label>
+     							<div class="col-sm-10">
+     								<textarea name="content" id="fcontent"  class="form-control" placeholder="保持140个字符内"></textarea>
+     							</div>
+     						</div>
+     						<div class="form-group">
+     							<div class="col-sm-offset-2 col-sm-10">
+     								<button type="submit" class="btn btn-default submit">提交</button>
+     							</div>
+     						</div>
+     					</fieldset>
+     				</form>
+     				<div class="message-main">
+     					<p class="lead">最新留言：</p>				
+     					<div class="media">
+     						<a class="media-left" href="#">
+     							<img class="media-object" src="images/visitor.jpg" alt="默认头像">
+     						</a>
+     						<div class="media-body">
+     							<h4 class="media-heading">测试</h4>
+     							<p>发表于 <span class="message-time"></span></p>
+     							<p>这是一些示例文本。这是一些示例文本。
+     								这是一些示例文本。这是一些示例文本。
+     								这是一些示例文本。这是一些示例文本。
+     								这是一些示例文本。这是一些示例文本。
+     								这是一些示例文本。这是一些示例文本。</p>
+     							</div>
+     						</div>
+     					</div>
+     				</div>	
+              <!-- 侧边栏 -->
+                    <aside class="container col-sm-3">
+                         <div class="intro">
+                              <div class="head-icon"><img src="icon/head-icon.jpg"  class="img-circle"        alt="我的头像">
+                                   <h3>朱厚强<br></h3>
+                                   <em>一名兴趣使然的Web Designer</em>
+                              </div><br>
+                              <div class="contact">
+                                   <ul>
+                                        <li><a href="weixin.html" target="_blank"  class="contact-1" ></a></li>
+                                        <li><a href="http://wpa.qq.com/msgrd?v=3&uin=245773708&site=qq&menu=yes" title="qq：245773708" class="contact-2"></a></li>
+                                        <li><a href="#" title="微博账号被封" class="contact-3"></a></li>
+                                        <li><a href="https://github.com/indoorsfish" target="_blank" title="github" class="contact-4" ></a></li>
+                                   </ul>
+                              </div>
+                         </div>
+                         <div class="weixin"><img src="images/wx.png" alt="weixins.png"></div>
+                              <div class="tab">
+                                   <p class="lead">站内搜索&nbsp;<span class="glyphicon glyphicon-search" style="font-size: 14px;"></span></p>
+                                   <form action="blog-all.html" role="form">
+                                        <div class="form-group input-group">    
+                                             <input type="text"  class ="form-control" placeholder="search...">
+                                             <span class="input-group-btn">
+                                          <button class="btn btn-primary" type="button">搜索</button>
+                                        </span>
+                                        </div>
+                                   </form>
+                              </div>
+                              <div class="tab"> 
+                                   <p class="lead">标签分类&nbsp;<span class="glyphicon glyphicon-tags" style="font-size: 14px;"></span></p>
+                                   <div class="summary"> 
+                                        <button class="btn btn-primary btn-xs"><a href="blog-all.html">全部</a><span class="badge"></span></button>
+                                        <button class="btn btn-success btn-xs html-btn"><a href="blog-all.html" >HTML</a><span class="badge"></span> </button>
+                                        <button class="btn btn-info btn-xs css-btn"><a href="blog-all.html" >CSS</a><span class="badge"></span> </button>
+                                        <button class="btn btn-warning btn-xs javascript-btn"><a href="blog-all.html" class="">JavaScript</a><span class="badge"></span></button> 
+                                        <button class="btn btn-danger btn-xs jquery-btn"><a href="blog-all.html" >JQuery</a><span class="badge"></span></button>
+                                        <button class="btn btn-primary btn-xs other-btn"><a href="blog-all.html">其他</a> </button>
+                                   </div>
+                              </div>
+                              <div class="tab">
+                                <p class="lead">日历&nbsp;<span class="glyphicon glyphicon-calendar" style="font-size: 14px;"></span></p>
+                              <div id="calendar">
+                              <a href="##" class="lastMonth"><</a> 
+                              <a href="##" class="nextMonth">></a>
+                              <h4>2013年10月</h4>
+                              <ul class="week">
+                                   <li>日</li>
+                                   <li>一</li>
+                                   <li>二</li>
+                                   <li>三</li>
+                                   <li>四</li>
+                                   <li>五</li>
+                                   <li>六</li>
+                              </ul>
+                              <ul class="dateList"></ul>
+                              </div>
+                          </div>
+                    </aside>
+     			</div>
+     		</div>
+               <!-- 页脚部分 -->
+     		<footer class="foot">
+     			<p>Copyright© 2018 朱厚强的博客</p>
+     		</footer>
+               <!--      小插件 -->
+     		<div id="board">  
+                    <p id="goTop"><span class="glyphicon glyphicon-chevron-up"></span></p> 
+                     <p id="mb"><a href="留言板.html" title="留言版"><span class="glyphicon glyphicon-envelope"></span></a></p> 
+                </div>  
+
+     		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+     		<script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+     		<script type="text/javascript" src="javascript/act.js"></script>
+     	</body>
+     	</html>

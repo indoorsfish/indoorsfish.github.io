@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML知识点整理</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+	<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+         <![endif]-->
+	
+     </head>
+     <body>
+  <header>
+ 		<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navgation">
+ 			<div class="container">
+ 				<div class="navbar-header">
+ 					<button type="button" class="navbar-toggle" data-toggle="collapse" 
+	 					data-target="#example-navbar-collapse">
+	 					<span class="sr-only">切换导航</span>
+	 					<sapn class="icon-bar"></sapn>
+	 					<span class="icon-bar"></span>
+	 					<span class="icon-bar"></span>
+	 				</button>
+ 					<span><a class="navbar-brand" href="index.html"> 朱厚强的Blog </a>
+ 						<i><img src="icon/logo.png" alt="logo"></i>
+ 					</span>
+ 		 	 	</div>
+ 				<div class="collapse navbar-collapse" id="example-navbar-collapse">
+	 				<ul class="nav navbar-nav">
+	 					<li><a href="index.html"><span class="glyphicon glyphicon-home" > 首页</span></a></li>
+	 					<li><a href="index.html" class="html-btn">HTML</a></li>
+	 					<li><a href="index.html" class="css-btn">CSS</a></li>
+	 					<li><a href="index.html" class="javascript-btn jquery-btn">Js/JQuery</a></li>
+	 					<li><a href="index.html" class="other-btn">其他</a></li>
+	 					<li  class="dropdown" >
+ 						<a  href="#" class="dropdown-toggle" data-toggle="dropdown">
+ 							浏览器下载<span class="caret"></span> </a>
+ 							<ul class="dropdown-menu" role="menu">
+ 								<li class="dropdown-header">pc端</li>
+ 								<li role="presentation"><a rel="nofollow" href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads">IE11</a></li>
+ 								<li role="presentation"><a rel="nofollow" href="http://www.google.cn/chrome/browser/desktop/">Chrome</a></li>
+ 								<li role="presentation"><a rel="nofollow" href="http://www.firefox.com.cn/">Firefox</a></li>
+ 								<li role="presentation" class="divider"></li>
+ 								<li role="presentation" class="dropdown-header">移动端</li>
+ 								<li role="presentation"><a rel="nofollow" href="https://support.apple.com/zh_CN/downloads/safari">Safary</a></li>
+ 								<li role="presentation"><a rel="nofollow" href="http://www.opera.com/zh-cn">Opera</a></li>
+ 							</ul>
+ 						</li>
+ 						<li><a href="留言板.html">留言板</a></li>
+ 					</ul>    
+ 				</div>
+ 			</div>    
+ 		</nav>
+ 	</header>
+
+
+ 	<!-- 灯开关 -->
+ <div class="deng"  title="白天模式/夜间模式">
+      <input type="checkbox" id="deng" />
+      <label class="slider-v1" for="deng"></label>
+  </div>
+ <!-- 	主体 -->
+     	<div class="main container">
+			<div class="Breadcrumbs">
+					<ol class="breadcrumb">
+				  		<li><a href="#">首页</a></li>
+			  	 		<li><a href="blog-all.html">全部</a></li>
+				   		<li><a href="blog-all.html">html</a></li>
+				  		<li class="active">HTML知识点整理</li>
+					</ol>
+			</div>
+			<div class="row">
+			<div class="article col-sm-9">
+				<div class="page-header">
+					<h1>HTML知识点整理</h1>
+					<p class="posted-date text-muted">
+ 						<span class="glyphicon glyphicon-time"></span> 2018年1月13日</p> 
+				</div>
+
+				<!-- 文章主要内容 -->
+				<div class="detail-article">
+				<h2>基本知识点：</h2>
+				<h3>概念</h3>
+						<p>什么是HTML?</p>
+					<ul>
+						<li>HTML 超文本标记语言:（HyperText Markup Language）是用来描述网页的一种语言</li>
+						<li>HTML 不是一种编程语言，而是一种标记语言，拥有一套标记标签</li>
+						<li>HTML 文档包含了HTML 标签及文本内容</li>
+					</ul>
+					<p>简单地说，现在网络上绝大部分网页都是基于HTML编写的。</p>
+				<h3>HTML编辑器</h3>
+					<ul>
+						<li>Sublime Text 3 (新手级)</li>
+						<li>WebStorm (高手级)</li>
+						<li>Text文本文档 (骨灰级)</li>
+						<li>等等</li>
+					</ul>
+				<h3>HTML基本结构</h3>
+			<pre>
+&lt;!DOCTYPE html&gt;   -------------- 文档定义类型
+    &lt;head&gt;  -------------- 文档头部标记：含脚本，样式表等等。
+        &lt;meta /&gt;  -------------- 定义文档字符集、使用语言、作者等基本信息
+        &lt;title>标题&lt;/title&gt;  -------------- 定义文档的标题
+    &lt;/head&gt;
+    &lt;body&gt;   -------------- 网页主体,是可见的页面内容
+        &lt;h1&gt;Hello world&lt;/h1&gt; -----------标题
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+					<h3>HTML元素</h3>
+				   <p>HTML 元素指的是从开始标签（start tag）到结束标签（end tag）的所有代码。分为：</p>
+					<h4>1. 标题 段落 块</h4>
+						<pre>//标题:h1~h6
+&lt;h1&gt;1号标题&lt;/h1&gt;
+&lt;h2&gt;2号标题&lt;/h2&gt;
+&lt;h3&gt;3号标题&lt;/h3&gt;
+&lt;h4&gt;4号标题&lt;/h4&gt;
+&lt;h5&gt;5号标题&lt;/h5&gt;
+&lt;h6&gt;6号标题&lt;/h6&gt;
+
+//段落：&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;第一段&lt;/p&gt;
+&lt;p&gt;第二段&lt;/p&gt;
+
+//块：&lt;div&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;h1&gt;标题&lt;/h1&gt;
+&lt;p&gt;段落&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+<p><small>*有哪些块元素？哪些内嵌元素？</small></p>
+
+<p><small>块元素：块级元素在浏览器显示时，通常会以新行来开始（和结束）  display:block</small></p>
+
+<p><small>例子：&lt;h1&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;table&gt;，&lt;div&gt;</small></p>
+
+<p><small>内嵌元素：内联元素在显示时通常不会以新行开始。 display:inline</small></p>
+<p><small>例子：&lt;b&gt;, &lt;td&gt;, &lt;a&gt;, &lt;img&gt;,&lt;span&gt;</small></p><br>
+
+					<h4>2. 图片 超链接 锚点链接</h4>
+					<pre>绝对路径和相对路径的区别(网络地址为例)
+ 绝对路径：协议+主机+路径+文档
+ 相对路径：/根目录  ../上一级目录  ../../上上一级目录
+
+//图像:&lt;img src=""  alt=""/&gt;
+
+//超链接：&lt;a href=""&gt;&lt;/a&gt;
+&lt;a href="http://www.baidu.com" target="_blank"&gt;&lt;/a&gt;
+
+//锚点链接:定义一个唯一的'id' 赋给href 实现跳转
+&lt;a href="#p1"&gt;点击前往第六段&lt;/a&gt;
+&lt;p id="p1"&gt;第六段&lt;/p&gt;
+</pre>
+<p><small>*url、src与href属性的区别:</small></p>
+
+<p><small>href 用于建立链接关系，&lt;a&lt;, &lt;link&lt;元素，浏览器在解析到此处时之道这里是个外部链接（或锚点）而并不需要加载这个链接的内容。因此页面解析不会被暂停。不载入文档</small></p>
+
+<p><small>src用于置换元素，即是说这个元素的内容通过src的地址获得，不受css样式限制。&lt;script /&gt; &lt;img /&gt;&lt;video /&gt; 等.浏览器在解析到此处时会暂停所有渲染，加载直到此处内容被加载完成。载入文档</small></p>
+
+<p><small>url狭义来讲，在这里url代表了CSS的一个数据类型，它指定了一个数据的链接位置。通常的用法是用url()函数:background-image:url(images/01.jpg);</small></p>
+<p><small>url不是属性，src和href是属性</small></p><br>
+
+					<h4>3. 字体样式 换行 水平线</h4>
+					<pre>&lt;b&gt;<b>字体加粗</b>&lt;/b&gt;
+&lt;i&gt;<i>斜体字体</i>&lt;/i&gt;
+&lt;u&gt;<u>下划线</u>&lt;/u&gt;
+&lt;del&gt;<del>删除线</del>&lt;/del&gt;
+
+上标：X&lt;sup&gt;2&lt;/sup&gt; X<sup>2</sup>
+下标：Y&lt;sub&gt;3&lt;/sub&gt; X<sub>2</sub>
+
+//字体相关属性：
+&lt;p style="font-size:5px; color:red;" &gt;<p style="font-size: 5px;color: red;">字体大小为5像素，颜色为红色</p>&lt;/p&gt;
+
+//换行：&lt;br /&gt;                 
+&lt;br /&gt;  //换行
+
+//水平线:&lt;hr /&gt;
+&lt;hr /&gt;</pre><br>
+					<h4>4. 列表: 有序列表 无序列表 定义列表</h4>
+					<pre>有序列表：通常用来表示内容之间的顺序或者是重要性关系，每一个列表都分为多个子项，每一个子项都有相应的编号。
+&lt;ol&gt;
+  &lt;li&gt;新闻1&lt;/li&gt;
+  &lt;li&gt;新闻2&lt;/li&gt;
+  &lt;li&gt;新闻3&lt;/li&gt;
+  &lt;li&gt;新闻4&lt;/li&gt;
+&lt;/ol&gt;
+
+无序列表：仅仅用于表示内容之间存在有并列关系，也是分为多个子项，但是子项之前没有相应的编号，只有一个原点用于标识。
+&lt;ul&gt;
+  &lt;li&gt;...&lt;/li&gt;
+  &lt;li&gt;...&lt;/li&gt;
+  &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+
+定义列表:通常用于表示名词或者是概念的定义，每一个子项有两个部分组成，第一部分是名词或者是概念，第二部分是相应的解释和描述。
+&lt;dl&gt;
+  &lt;dt&gt;...&lt;/dt&gt;
+  &lt;dd&gt;...&lt;/dd&gt;
+&lt;/dl&gt;</pre><br>
+					<h4>5.表格: table</h4>
+					<pre>//table元素的作用是显示表格化的数据！
+//主要元素：table tr th td   （隐藏元素：tbody thead tfoot）
+
+//语法书写：
+&lt;table&gt;  ---------表格
+  &lt;tr&gt;   ---------行
+    &lt;th&gt;内容&lt;/th&gt;  ---------单元格(字体加粗)
+    &lt;td&gt;内容&lt;/td&gt;  ---------单元格
+    &lt;td&gt;内容&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+//其他：
+合并单元格：rowspan="2"合并行，colspan="3"和并列 
+表格边框设置：1.table中border-spacing 2.border-collapse=collapse</pre>
+<p><small></small></p><br>
+					<h4>6.表单: form</h4>
+					<pre>//表单对于用户而言是数据的录入和提交的界面；
+//表单对于网站而言获取用户信息的途径。
+
+基本格式：&lt;form action="路径"&gt;
+			...
+	  	  &lt;/form&gt;
+
+常用的表单元素:
+
+&lt;input type=""/&gt;  //根据不同的 type 属性，可以变化为多种形态。
+&lt;textarea&gt;&lt;/textarea&gt;  //定义多行输入字段（文本域）。
+&lt;button&gt;&lt;/button&gt; //定义可点击的按钮。
+&lt;select&gt;  //定义下拉列表。
+	&lt;option&gt;1&lt;/option&gt;
+	&lt;option&gt;2&lt;/option&gt;
+&lt;/select&gt;   
+
+文本框：&lt;input type="text"&gt; 定义供文本输入的单行输入字段。
+&lt;input type="text" name="控件名字" value="值" maxlength="最大输入字符长度" size="控件宽度" readonly="readonly"（只读） /&gt;
+
+密码框：&lt;input type="password"&gt; 定义密码字段。
+&lt;input type="password" name="控件名字" value="值" maxlength="最大输入字符长度" size="控件宽度" readonly="readonly"（只读） /&gt;
+
+多选勾选控件：&lt;input type="checkbox"&gt; 定义复选框
+&lt;input type="checkbox" name="控件名字" value="值" checked="checked"(已选中) disabled = "disabled"(禁用控件) /&gt;
+
+单选勾选控件：&lt;input type="radio"&gt; 定义单选按钮。
+&lt;input type="radio" name="控件名字" value="值" checked="checked"(已选中) disabled = "disabled"(禁用控件) /&gt;
+
+提交表单按钮：&lt;input type="submit"&gt; 定义提交表单数据至表单处理程序的按钮。
+&lt;input type="submit" value="按钮字样" /&gt;
+
+重置表单按钮：
+&lt;input type="reset" value="按钮字样" /&gt;
+
+上传文件按钮：
+&lt;input type="file" name="文件名称"&gt;
+
+按钮：&lt;input type="button&gt; 定义按钮。
+&lt;input type="button" onclick="alert('Hello World!')" value="Click Me!"&gt;
+
+标签：&lt;input type="radio" name="sex" id="male" &gt; 
+&lt;label for="male""&gt;男性&lt;/label&gt;
+
+//html5新增：color date date-time datetime-local email month number searchtel timeurlweek等
+</pre><br>
+					<h4>7.样式和脚本</h4>
+<pre>//样式标签：&lt;style&gt;&lt;/style&gt;  
+//脚本标签：&lt;script&gt;&lt;/script&gt;
+</pre>
+<!-- 文章结束 -->
+				<hr>	
+					<p></p>
+				<p>标签：
+					<button class="btn btn-success btn-xs"><a href="">html<span class="badge">1</span></a> </button></p>	
+					 <div class="share">
+						<div class="good"><span class="glyphicon glyphicon-thumbs-up"></span><br><span>2</span>
+						</div>	
+					 </div>
+					 <div class="talk">
+					 	<h2>评论：</h2>
+					 	<hr>
+					 	<form action="#">
+					 	名字：<input type="text"><br><br>
+					 	内容：<textarea name="" id="" ></textarea><br><br>
+					 	<input type="submit">
+					 	</form>
+
+					 </div>
+				</div>
+
+	  		</div>	
+			<!-- 侧边栏 -->
+				<aside class="container col-sm-3">
+					<div class="intro">
+						<div class="head-icon"><img src="icon/head-icon.jpg"  class="img-circle"  		alt="我的头像">
+							<h3>朱厚强<br></h3>
+							<em>一名兴趣使然的Web Designer</em>
+						</div><br>
+						<div class="contact">
+							<ul>
+								<li><a href="weixin.html" target="_blank"  class="contact-1" ></a></li>
+								<li><a href="http://wpa.qq.com/msgrd?v=3&uin=245773708&site=qq&menu=yes" title="qq：245773708" class="contact-2"></a></li>
+								<li><a href="#" title="微博账号被封" class="contact-3"></a></li>
+								<li><a href="https://github.com/indoorsfish" target="_blank" title="github" class="contact-4" ></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="weixin"><img src="images/wx.png" alt="weixins.png"></div>
+						<div class="tab">
+							<p class="lead">站内搜索&nbsp;<span class="glyphicon glyphicon-search" style="font-size: 14px;"></span></p>
+							<form action="blog-all.html" role="form">
+								<div class="form-group input-group">	
+									<input type="text"  class ="form-control" placeholder="search...">
+									<span class="input-group-btn">
+	                      			  <button class="btn btn-primary" type="button">搜索</button>
+	                    			</span>
+								</div>
+							</form>
+						</div>
+						<div class="tab"> 
+							<p class="lead">标签分类&nbsp;<span class="glyphicon glyphicon-tags" style="font-size: 14px;"></span></p>
+							<div class="summary"> 
+								<button class="btn btn-primary btn-xs"><a href="blog-all.html">全部</a><span class="badge"></span></button>
+								<button class="btn btn-success btn-xs html-btn"><a href="blog-all.html" >HTML</a><span class="badge"></span> </button>
+								<button class="btn btn-info btn-xs css-btn"><a href="blog-all.html" >CSS</a><span class="badge"></span> </button>
+								<button class="btn btn-warning btn-xs javascript-btn"><a href="blog-all.html" class="">JavaScript</a><span class="badge"></span></button> 
+								<button class="btn btn-danger btn-xs jquery-btn"><a href="blog-all.html" >JQuery</a><span class="badge"></span></button>
+								<button class="btn btn-primary btn-xs other-btn"><a href="blog-all.html">其他</a> </button>
+							</div>
+						</div>
+						<div class="tab">
+						  <p class="lead">日历&nbsp;<span class="glyphicon glyphicon-calendar" style="font-size: 14px;"></span></p>
+						<div id="calendar">
+						<a href="##" class="lastMonth"><</a> 
+						<a href="##" class="nextMonth">></a>
+						<h4>2013年10月</h4>
+						<ul class="week">
+							<li>日</li>
+							<li>一</li>
+							<li>二</li>
+							<li>三</li>
+							<li>四</li>
+							<li>五</li>
+							<li>六</li>
+						</ul>
+						<ul class="dateList"></ul>
+						</div>
+					 </div>
+				</aside>
+				 </div>
+			</div>
+
+			<footer class="foot">
+				<p>Copyright© 2018 朱厚强的博客</p>
+			</footer>
+			<div id="board">  
+				<p id="goTop"><span class="glyphicon glyphicon-chevron-up"></span></p> 
+				<p id="mb"><a href="留言板.html" title="留言版"><span class="glyphicon glyphicon-envelope"></span></a></p> 
+			</div>  
+ 
+
+
+
+     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+     <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="javascript/act.js"></script>
+ </body>
+ </html>
