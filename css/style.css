@@ -426,13 +426,16 @@
 
 
 /* 页脚模块 */
-	.foot{
+	.foot p{
 		margin-top: 10px;
+		margin-bottom: 0;
 		height: 30px;
+		line-height: 30px;
 		background-color: #222;
 		color: #666;
 		text-align: center;
 	}
+
 
 	/*返回顶部模块*/
 	#board{
