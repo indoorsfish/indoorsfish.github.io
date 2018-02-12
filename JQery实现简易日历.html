@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JQery实现简易日历</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+	<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+         <![endif]-->
+	
+     </head>
+     <body>
+    <header>
+ 		<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navgation">
+ 			<div class="container">
+ 				<div class="navbar-header">
+ 					<button type="button" class="navbar-toggle" data-toggle="collapse" 
+	 					data-target="#example-navbar-collapse">
+	 					<span class="sr-only">切换导航</span>
+	 					<sapn class="icon-bar"></sapn>
+	 					<span class="icon-bar"></span>
+	 					<span class="icon-bar"></span>
+	 				</button>
+ 					<span><a class="navbar-brand" href="index.html"> 朱厚强的Blog </a>
+ 						<i><img src="icon/logo.png" alt="logo"></i>
+ 					</span>
+ 		 	 	</div>
+ 				<div class="collapse navbar-collapse" id="example-navbar-collapse">
+	 				<ul class="nav navbar-nav">
+	 					<li><a href="index.html"><span class="glyphicon glyphicon-home" > 首页</span></a></li>
+	 					<li><a href="index.html" class="html-btn">HTML</a></li>
+	 					<li><a href="index.html" class="css-btn">CSS</a></li>
+	 					<li><a href="index.html" class="javascript-btn jquery-btn">Js/JQuery</a></li>
+	 					<li><a href="index.html" class="other-btn">其他</a></li>
+	 					<li  class="dropdown" >
+ 						<a  href="#" class="dropdown-toggle" data-toggle="dropdown">
+ 							浏览器下载<span class="caret"></span> </a>
+ 							<ul class="dropdown-menu" role="menu">
+ 								<li class="dropdown-header">pc端</li>
+ 								<li role="presentation"><a rel="nofollow" href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads">IE11</a></li>
+ 								<li role="presentation"><a rel="nofollow" href="http://www.google.cn/chrome/browser/desktop/">Chrome</a></li>
+ 								<li role="presentation"><a rel="nofollow" href="http://www.firefox.com.cn/">Firefox</a></li>
+ 								<li role="presentation" class="divider"></li>
+ 								<li role="presentation" class="dropdown-header">移动端</li>
+ 								<li role="presentation"><a rel="nofollow" href="https://support.apple.com/zh_CN/downloads/safari">Safary</a></li>
+ 								<li role="presentation"><a rel="nofollow" href="http://www.opera.com/zh-cn">Opera</a></li>
+ 							</ul>
+ 						</li>
+ 						<li><a href="留言板.html">留言板</a></li>
+ 					</ul>    
+ 				</div>
+ 			</div>    
+ 		</nav>
+ 	</header>
+
+
+ 	<!-- 灯开关 -->
+ <div class="deng"  title="白天模式/夜间模式">
+      <input type="checkbox" id="deng" />
+      <label class="slider-v1" for="deng"></label>
+  </div>
+
+<!--  	主体 -->
+     	<div class="main container">
+			<div class="Breadcrumbs">
+					<ol class="breadcrumb">
+				  	 	<li><a href="index.html">首页</a></li>
+			  		 	<li><a href="blog-all.html">全部</a></li>
+				   		<li><a href="blog-all.html">JQuery</a></li>
+				  		<li class="active">JQery实现简易日历</li>
+					</ol>
+			</div>
+			<div class="row">
+			<div class="article col-sm-9">
+				<div class="page-header">
+					<h1>JQery实现简易日历</h1>
+					<p class="posted-date text-muted">
+ 						<span class="glyphicon glyphicon-time"></span> 2018年2月3日</p> 
+				</div>
+
+				<!-- 文章主要内容 -->
+				<div class="detail-article">
+				<h2>引：</h2>
+				<p>在个人博客中添加日历模块颇为流行，网上搜索一些资料，其中大部分都是以javascript实现的，而本文采用了javascript的框架jquery实现了博客日历效果。分享给需要的朋友，不多说上代码：</p>
+				<h3>html：</h3>
+				<pre>
+&lt;div id="calendar"&gt;
+	&lt;a href="##" class="lastMonth"&lt;&lt;&gt;/a&gt;
+	&lt;a href="##" class="nextMonth"&lt;&lt;&gt;/a&gt;
+	&lt;h4&gt;2013年10月&lt;/h4&gt;
+	&lt;ul class="week"&gt;
+		&lt;li&gt;日&lt;/li&gt;
+		&lt;li&gt;一&lt;/li&gt;
+		&lt;li&gt;二&lt;/li&gt;
+		&lt;li&gt;三&lt;/li&gt;
+		&lt;li&gt;四&lt;/li&gt;
+		&lt;li&gt;五&lt;/li&gt;
+		&lt;li&gt;六&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;ul class="dateList"&gt;&lt;/ul&gt;
+  &lt;/div&gt;				
+</pre>
+				<h3>css：</h3>
+				<pre>
+aside #calendar {
+		width: 250px;
+		margin-top: 30px;
+		overflow: hidden;
+		border: 1px solid #999;
+		padding: -10px;
+		border-radius: 5px;
+	}
+	aside #calendar h4 {
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	aside #calendar .lastMonth {
+		float: left;
+		position: relative;
+		top: 10px;
+		left: 20px;
+	}
+	aside #calendar .nextMonth {
+		float: right;
+		position: relative;
+		top: 10px;
+		right: 20px;
+	}
+	aside #calendar .week {
+		height: 30px;
+		line-height: 20px;
+		border-bottom: 1px solid #999;
+		margin-bottom: 10px;
+		margin-left:-18px;
+		background-color: #ddd;
+	}
+	aside #calendar .week li {
+		float: left;
+		width: 30px;
+		height: 30px;
+		text-align: center;
+		list-style: none;
+	}
+	aside #calendar .dateList {
+		overflow: hidden;
+		clear: both;
+		margin-left:-18px;
+	}
+	aside #calendar .dateList li {
+		float: left;
+		width: 30px;
+		height: 30px;
+		text-align: center;
+		line-height: 30px;
+		list-style: none;
+	}
+	aside #calendar .dateList .ccc {
+		color: #ccc;
+	}
+	aside #calendar .dateList .red {
+		background: #F90;
+		color: #fff;
+	}
+	aside #calendar .dateList .sun {
+		color: #f00;
+	}			
+</pre>
+				<h3>js：</h3>
+				<pre><code>
+//日历代码
+var iNow=0;
+function run(n) {
+    var oDate = new Date(); //定义时间
+    oDate.setMonth(oDate.getMonth()+n);//设置月份
+    var year = oDate.getFullYear(); //年
+    var month = oDate.getMonth(); //月
+    var today = oDate.getDate(); //日
+
+    //计算本月有多少天
+    var allDay = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month];
+    //相当于var allday=[1,2,3];   allday[12]
+
+    //判断闰年
+    if(month == 1) {
+        if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            allDay = 29;
+        }
+    }
+    //判断本月第一天是星期几
+    oDate.setDate(1); //时间调整到本月第一天
+    var week = oDate.getDay(); //读取本月第一天是星期几
+    $(".dateList").empty();
+    //插入空白
+    for(var i = 0; i < week; i++) {
+        $(".dateList").append("&lt;li&gt;&lt;/li&gt;");
+    }
+    //日期插入到dateList
+    for( i = 1; i <= allDay; i++) {
+        $(".dateList").append("&lt;li&gt;" + i + "&lt;/li&gt;");
+    }
+    //标记颜色
+    $(".dateList li").each(function(i, elm){
+        var val = $(this).text();
+        if (n==0) {
+            if(val&lt;today){
+                $(this).addClass('ccc');
+            }else if(val==today){
+                $(this).addClass('red');
+            }else if(i%7==0  ||  i%7==6   ){
+                $(this).addClass('sun');
+            }
+        }else if(n&lt;0){
+            $(this).addClass('ccc');
+        }else if(i%7==0  ||  i%7==6   ){
+            $(this).addClass('sun');
+        }
+    });
+    //定义标题日期
+    $("#calendar h4").text(year + "年" + (month + 1) + "月");
+}
+run(iNow);
+$(".lastMonth").click(function(){
+    iNow--;
+    run(iNow);
+});
+$(".nextMonth").click(function(){
+    iNow++;
+    run(iNow);
+});			
+</code></pre>
+<br>
+					<p>具体效果见本人博客侧边栏。</p>
+					<!-- 文章结束 -->
+					<hr>	
+						<p></p>
+					<p>标签：
+							<button class="btn btn-warning btn-xs"><a href="">javascript<span class="badge">1</span></a></button> 	
+						 <div class="share">
+						<div class="good"><span class="glyphicon glyphicon-thumbs-up"></span><br><span>2</span>
+						</div>	
+					</div>
+					<div class="talk">
+					 	<h2>评论：</h2>
+					 	<hr>
+					 	<form action="#"  class="form-horizontal" role="form">
+					 		<div class="form-group">
+ 								<label for="name" class="col-sm-2 control-label">昵称</label>
+ 								<div class="col-sm-10">
+ 									<input type="text" class="form-control"  id="fname" placeholder="请输入昵称">
+ 								</div>
+ 							</div>
+ 							<div class="form-group">
+ 								<label for="content" class="col-sm-2 control-label" >留言内容</label>
+ 								<div class="col-sm-10">
+ 									<textarea name="content" id="fcontent"  class="form-control" placeholder="保持140个字符内"></textarea>
+ 								</div>
+ 							</div>
+ 							<div class="form-group">
+ 								<div class="col-sm-offset-2 col-sm-10">
+ 									<button type="submit" class="btn btn-default submit">提交</button>
+ 								</div>
+ 							</div>
+					 	</form>
+					 </div>
+				</div>
+
+		  	</div>	
+			<!-- 侧边栏 -->
+			<aside class="container col-sm-3">
+				<div class="intro">
+					<div class="head-icon"><img src="icon/head-icon.jpg"  class="img-circle"  		alt="我的头像">
+						<h3>朱厚强<br></h3>
+						<em>一名兴趣使然的Web Designer</em>
+					</div><br>
+					<div class="contact">
+						<ul>
+							<li><a href="weixin.html" target="_blank"  class="contact-1" ></a></li>
+							<li><a href="http://wpa.qq.com/msgrd?v=3&uin=245773708&site=qq&menu=yes" title="qq：245773708" class="contact-2"></a></li>
+							<li><a href="#" title="微博账号被封" class="contact-3"></a></li>
+							<li><a href="https://github.com/indoorsfish" target="_blank" title="github" class="contact-4" ></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="weixin"><img src="images/wx.png" alt="weixins.png"></div>
+					<div class="tab">
+						<p class="lead">站内搜索&nbsp;<span class="glyphicon glyphicon-search" style="font-size: 14px;"></span></p>
+						<form action="blog-all.html" role="form">
+							<div class="form-group input-group">	
+								<input type="text"  class ="form-control" placeholder="search...">
+								<span class="input-group-btn">
+                      			  <button class="btn btn-primary" type="button">搜索</button>
+                    			</span>
+							</div>
+						</form>
+					</div>
+					<div class="tab"> 
+						<p class="lead">标签分类&nbsp;<span class="glyphicon glyphicon-tags" style="font-size: 14px;"></span></p>
+						<div class="summary"> 
+							<button class="btn btn-primary btn-xs"><a href="blog-all.html">全部</a><span class="badge"></span></button>
+							<button class="btn btn-success btn-xs html-btn"><a href="blog-all.html" >HTML</a><span class="badge"></span> </button>
+							<button class="btn btn-info btn-xs css-btn"><a href="blog-all.html" >CSS</a><span class="badge"></span> </button>
+							<button class="btn btn-warning btn-xs javascript-btn"><a href="blog-all.html" class="">JavaScript</a><span class="badge"></span></button> 
+							<button class="btn btn-danger btn-xs jquery-btn"><a href="blog-all.html" >JQuery</a><span class="badge"></span></button>
+							<button class="btn btn-primary btn-xs other-btn"><a href="blog-all.html">其他</a> </button>
+						</div>
+					</div>
+					<div class="tab">
+					  <p class="lead">日历&nbsp;<span class="glyphicon glyphicon-calendar" style="font-size: 14px;"></span></p>
+					<div id="calendar">
+					<a href="##" class="lastMonth"><</a> 
+					<a href="##" class="nextMonth">></a>
+					<h4>2013年10月</h4>
+					<ul class="week">
+						<li>日</li>
+						<li>一</li>
+						<li>二</li>
+						<li>三</li>
+						<li>四</li>
+						<li>五</li>
+						<li>六</li>
+					</ul>
+					<ul class="dateList"></ul>
+					</div>
+				 </div>
+			</aside>
+		</div>
+		</div>
+
+		<!-- 页脚部分 -->
+		<footer class="foot">
+			<p>Copyright© 2018 朱厚强的博客</p>
+		</footer>
+
+		<!-- 	小插件 -->
+		<div id="board">  
+			<p id="goTop"><span class="glyphicon glyphicon-chevron-up"></span></p> 
+			<p id="mb"><a href="留言板.html" title="留言版"><span class="glyphicon glyphicon-envelope"></span></a></p> 
+		</div>  
+
+
+
+	    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="javascript/act.js"></script>
+	</body>
+</html>

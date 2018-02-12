@@ -101,14 +101,14 @@
 					<p>JavaScript变量分为两种：基本类型和引用类型。其中基本类型就是前面提到的5种基本数据类型，引用类型就是前面提到的Object以及基于它的其他复杂数据类型。<br>
 					✦ 基本类型：在内存中占据实际大小的空间，赋值的时候，会在内存中创建一份新的副本。<br>
 					✦ 引用类型：指向对象的指针而不是对象本身，赋值的时候，只是创建了一个新的指针指向对象。</p>
-					<div>
-					<img src="images/变量内存分配.png" alt="变量内存分配.png">
-					</div>
+					<figure>
+						<img src="images/变量内存分配.png" alt="变量内存分配.png">
+						<figcaption>数据类型</figcaption>
+					</figure>
 					<h3>变量内存分配</h3>
 					<p>基本类型在内存中是实际的值；而引用类型在内存中就是一个指针，指向一个对象，多个引用类型可能同时指向同一个对象。</p>
-					<p>如何确定某个变量是哪种数据类型？<br>
-					确定一个变量是哪种基本类型用typeof操作符。<br>
-					确定一个变量是哪种引用类型用instanceof操作符。</p>
+					<p>*使用typeof操作符来确定变量是何种基本类型，使用instanceof操作符来确定变量是何种引用类型</p>
+					
 					<h3>作用域</h3>
 					<p>变量是在某个特定的作用域中声明的，作用域决定了这些变量的生命周期，以及哪些代码可以访问其中的变量。<br>
 					JavaScript作用域只包括全局作用域和函数作用域，并不包含块级作用域！</p>
@@ -131,10 +131,10 @@ function changeColor() {
 					</pre>
 					<p>如下图所示，每个作用域能够访问到的变量以及嵌套的作用域可向上追溯。</p>
 					<br>
-					<div>
-					<img src="images/作用域链.png" alt="作用域链.png">
-					<p class="image-caption">作用域链</p>
-					</div>
+					<figure>
+						<img src="images/作用域链.png" alt="作用域链.png">
+						<figcaption>作用域链</figcaption>
+					</figure>
 					
 					<h2>引用类型</h2>
 					<p>Object是唯一的复杂数据类型，引用类型都是从Object类型上继承而来。<br>
@@ -154,10 +154,10 @@ function changeColor() {
 					<h3>定义一个类</h3>
 					<p>我们使用构造函数+原型的方式来定义一个类。</p>
 					<p>使用构造函数创建自定义类型，然后使用new操作符来创建类的实例，但是构造函数上的方法和属性在每个示例上都存在，不能共享，于是我们引入原型来实现方法和属性的共享。</p>
-					<div>
-					<img src="images/原型.png" alt="原型.png">
-					<p class="image-caption">原型</p>
-					</div>
+					<figure>
+						<img src="images/原型.png" alt="原型.png">
+						<figcaption>原型</figcaption>
+					</figure>
 					<p>将需要共享的方法和属性定义在原型上，把专属于实例的方法和属性放到构造函数中。我们就通过构造函数+原型的方式定义了一个类。</p>
 					<pre>// 构造函数
 function Person(name, age, job) {
@@ -188,10 +188,10 @@ alert(person1.sayName === person2.sayName);        //输出true
 					<p>前文讲了如何定义一个类，那么我们定义一个父类，一个子类。<br>
 					如何让子类继承父类呢？JavaScript通过原型链来实现继承！<br>
 					如何构建原型链呢？将父类实例赋值给子类构造函数的原型即可。</p>
-					<div>
-					<img src="images/原型链继承.png" alt="原型链继承.png">
-					</div>
-					<div class="image-caption">原型链继承</div>
+					<figure>
+						<img src="images/原型链继承.png" alt="原型链继承.png">
+						<figcaption>原型链继承</figcaption>
+					</figure>
 
 					<p>构建原型链之后，子类就可以访问父类的所有属性和方法！</p>
 					<pre>// 父类
@@ -357,12 +357,25 @@ function superFunc() {
 						 <div class="talk">
 						 	<h2>评论：</h2>
 						 	<hr>
-						 	<form action="#">
-						 	名字：<input type="text"><br><br>
-						 	内容：<textarea name="" id="" ></textarea><br><br>
-						 	<input type="submit">
-						 	</form>
-
+						 	<form action="#"  class="form-horizontal" role="form">
+					 		<div class="form-group">
+ 								<label for="name" class="col-sm-2 control-label">昵称</label>
+ 								<div class="col-sm-10">
+ 									<input type="text" class="form-control"  id="fname" placeholder="请输入昵称">
+ 								</div>
+ 							</div>
+ 							<div class="form-group">
+ 								<label for="content" class="col-sm-2 control-label" >留言内容</label>
+ 								<div class="col-sm-10">
+ 									<textarea name="content" id="fcontent"  class="form-control" placeholder="保持140个字符内"></textarea>
+ 								</div>
+ 							</div>
+ 							<div class="form-group">
+ 								<div class="col-sm-offset-2 col-sm-10">
+ 									<button type="submit" class="btn btn-default submit">提交</button>
+ 								</div>
+ 							</div>
+					 	</form>
 						 </div>
 					</div>
 
