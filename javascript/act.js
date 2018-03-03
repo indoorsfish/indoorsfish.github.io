@@ -76,7 +76,7 @@ $(function(){
     });
 });
 
-//简易点赞功能,没什么用
+//简易点赞功能,待完善
 $(function() {
     var zan= $(".good span:last").text();
         $(".good").click(function(){
@@ -238,8 +238,7 @@ $(function() {
 
 //日历代码
 $(function() {
-    //必要的数据
-    //今天的年 月 日 ；本月的总天数；本月第一天是周几？？？
+    //今天的年 月 日 ；本月的总天数；本月第一天是周几
     var iNow=0;
     function run(n) {
         var oDate = new Date(); //定义时间
@@ -260,10 +259,10 @@ $(function() {
         //时间调整到本月第一天
         oDate.setDate(1);
         //读取本月第一天是星期几
-        var week = oDate.getDay(); 
+        var firstDay = oDate.getDay(); 
         $(".dateList").empty();
         //插入空白
-        for(var i = 0; i < week; i++) {
+        for(var i = 0; i < firstDay; i++) {
             $(".dateList").append("<li></li>");
         }
         //日期插入到dateList
@@ -290,12 +289,14 @@ $(function() {
         //定义标题日期
         $("#calendar h4").text(year + "年" + (month + 1) + "月");
     }
-
+    //执行函数，传递参数iNow
     run(iNow);
+    //上个月日历
     $(".lastMonth").click(function(){
         iNow--;
         run(iNow);
     });
+    //下个月日历
     $(".nextMonth").click(function(){
         iNow++;
         run(iNow);

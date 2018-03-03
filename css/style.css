@@ -1,10 +1,4 @@
 /* 	设置默认效果 */
-	img{
-	transition: all .3s;
-	}
-	img:hover{
-		opacity: .8;
-	}
 	a:hover,a:active{
 		text-decoration: none;
 	}
@@ -41,6 +35,10 @@
 		margin-bottom: 20px;
 		height: 51px;
 		overflow: hidden;
+	}
+	header .navbar-brand{
+		font-family: KaiTi;
+		font-size: 30px;
 	}
 	header nav.navbar{
 		height: 51px;
@@ -129,7 +127,7 @@
        }
       @media screen and (max-width: 700px){
       	.deng{
-      		right: 20%;
+      		right: 15%;
       	}
       }
 
@@ -298,6 +296,12 @@
 	}	
 	aside .intro .head-icon{
 		cursor: pointer;
+	}
+	aside .intro .head-icon img:hover{
+		border-radius: 50%;
+		opacity: 0.8;
+	}
+	aside .intro .head-icon p{
 		border-bottom: 1px solid #ccc;
 	}
 	.contact{
@@ -448,7 +452,7 @@
 		position: fixed;  
 		right: 2%;  
 		bottom: 5%; 
-		background-color: #bbb;  
+		background-color: #ccc;  
 		cursor: pointer; 
 		font-size: 24px; 
 		color: #FFF;  
@@ -521,7 +525,12 @@
 	text-decoration: none;
 	color: #fff;
 }
-
+.main .talk form{
+	background-color: #f5f5f5;
+	padding: 20px;
+	border:1px solid #e3e3e3;
+	border-radius: 5px;
+}
 
 /* 留言版 */
 .main .row .message{

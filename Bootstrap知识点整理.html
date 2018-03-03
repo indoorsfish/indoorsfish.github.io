@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>Bootstrap知识点整理</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+	<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+         <![endif]-->
+     </head>
+     <body>
+     <header>
+ 		<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navgation">
+ 			<div class="container">
+ 				<div class="navbar-header">
+ 					<button type="button" class="navbar-toggle" data-toggle="collapse" 
+	 					data-target="#example-navbar-collapse">
+	 					<span class="sr-only">切换导航</span>
+	 					<sapn class="icon-bar"></sapn>
+	 					<span class="icon-bar"></span>
+	 					<span class="icon-bar"></span>
+	 				</button>
+ 					<span><a class="navbar-brand" href="index.html"> 朱厚强的Blog </a>
+ 						<i><img src="icon/logo.png" alt="logo"></i>
+ 					</span>
+ 		 	 	</div>
+ 				<div class="collapse navbar-collapse" id="example-navbar-collapse">
+	 				<ul class="nav navbar-nav">
+	 					<li><a href="index.html"><span class="glyphicon glyphicon-home" > 首页</span></a></li>
+	 					<li><a href="index.html" class="html-btn">HTML</a></li>
+	 					<li><a href="index.html" class="css-btn">CSS</a></li>
+	 					<li><a href="index.html" class="javascript-btn jquery-btn">Js/JQuery</a></li>
+	 					<li><a href="index.html" class="other-btn">其他</a></li>
+	 					<li  class="dropdown" >
+ 						<a  href="#" class="dropdown-toggle" data-toggle="dropdown">
+ 							浏览器下载<span class="caret"></span> </a>
+ 							<ul class="dropdown-menu" role="menu">
+ 								<li class="dropdown-header">pc端</li>
+ 								<li role="presentation"><a rel="nofollow" href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads">IE11</a></li>
+ 								<li role="presentation"><a rel="nofollow" href="http://www.google.cn/chrome/browser/desktop/">Chrome</a></li>
+ 								<li role="presentation"><a rel="nofollow" href="http://www.firefox.com.cn/">Firefox</a></li>
+ 								<li role="presentation" class="divider"></li>
+ 								<li role="presentation" class="dropdown-header">移动端</li>
+ 								<li role="presentation"><a rel="nofollow" href="https://support.apple.com/zh_CN/downloads/safari">Safary</a></li>
+ 								<li role="presentation"><a rel="nofollow" href="http://www.opera.com/zh-cn">Opera</a></li>
+ 							</ul>
+ 						</li>
+ 						<li><a href="留言板.html">留言板</a></li>
+ 					</ul>    
+ 				</div>
+ 			</div>    
+ 		</nav>
+ 	</header>
+ 	<!-- 灯开关 -->
+ <div class="deng"  title="白天模式/夜间模式">
+      <input type="checkbox" id="deng" />
+      <label class="slider-v1" for="deng"></label>
+  </div>
+
+  <!--    主体 -->
+     	<div class="main container">
+			<div class="Breadcrumbs">
+				<ol class="breadcrumb">
+			  	 	<li><a href="#">首页</a></li>
+			  	 	<li><a href="blog-all.html">全部</a></li>
+			   		<li><a href="blog-all.html">其他</a></li>
+			  		<li>Bootstrap知识点整理</li>
+				</ol>
+			</div>
+
+			<div class="row">
+			<div class="article col-sm-9">
+				<div class="page-header">
+					<h1>Bootstrap知识点整理</h1>
+					<p class="posted-date text-muted">
+ 						<span class="glyphicon glyphicon-time"></span> 2018年2月20日</p> 
+				</div>
+				<div class="detail-article">
+				<h3>引：</h3>
+				<p>Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。Bootstrap的设计目标是移动设备优先，然后才是桌面设备。</p>
+				<p>Bootstrap官网下载的文件主要有Bootstrap.css  Bootstrap.js插件（依赖jquery） Bootstrap.font三个重要的文件，以下是基础模板：</p>
+				<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset="UTF-8"&gt;
+      &lt;title>Bootstrap 模板&lt;/title&gt;
+      &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;  //在ie中运行最新的渲染模式
+      &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+      &lt;!-- 引入 Bootstrap --&gt;
+      &lt;link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+rel="stylesheet"&gt;
+      &lt;!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 --&gt;
+      &lt;!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 --&gt;
+      &lt;!--[if lt IE 9]&gt;
+         &lt;script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"&gt;&lt;/script&gt;
+         &lt;script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"&gt;&lt;/script&gt;
+      &lt;![endif]--&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;h1&gt;Hello, world!&lt;/h1&gt;
+
+      &lt;!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) --&gt;
+      &lt;script src="https://code.jquery.com/jquery.js"&gt;&lt;/script&gt;
+      &lt;!-- 包括所有已编译的插件 -->
+      &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;
+   &lt;/body&gt;
+&lt;/html&gt;	
+</pre>
+				<h2>Bootstrap样式篇</h2>
+				<h3>容器div</h3>
+					<ul>
+						<li>.container //居中固定的布局</li>
+						<li>.container-fluid //响应的自适应大小布局</li>
+					</ul>
+				<h3>文本</h3>
+				<h4>基本样式：</h4>
+					<ul>
+						<li>行高为1.42857143（line-height），大约是20px</li>
+						<li>颜色为深灰色（#333）</li>
+						<li>全局文本字号为14px(font-size)</li>
+						<li>字体为"Helvetica Neue", Helvetica, Arial, sans-serif;（font-family）</li>
+					</ul>
+				<h4>颜色：</h4>
+					<ul>
+						<li>.text-muted：提示，使用浅灰色（#999）</li>
+						<li>.text-primary：主要，使用蓝色（#428bca）</li>
+						<li>.text-success：成功，使用浅绿色(#3c763d)</li>
+						<li>.text-info：通知信息，使用浅蓝色（#31708f）</li>
+						<li>.text-warning：警告，使用黄色（#8a6d3b）</li>
+						<li>.text-danger：危险，使用褐色（#a94442）</li>
+					</ul>
+				<h4>对齐：</h4>
+					<ul>
+						<li> .text-left：左对齐</li>
+						<li> .text-center：居中对齐</li>
+						<li> .text-right：右对齐</li>
+						<li> .text-justify：两端对齐</li>
+					</ul>
+				<h4>其他：</h4>
+					<ul>
+						<li> .lead: 段落添加强调文本 ,让其显示效果显著</li>
+						<li> 重新定义了small、strong、em 、abbr(缩写)等标签</li>
+					</ul>
+				<h3>列表</h3>
+					<ul>
+						<li>.list-unstyled :去除默认的列表样式的风格</li>
+						<li>.list-inline :实现内联列表，把所有的列表项放在同一行中。为制作水平导航而生。</li>
+					</ul>
+				<h3>表格</h3>
+				<h4>在table标签中添加一下类：</h4>
+					<ul>
+						<li>.table：基础表格   //其他类必须和此类配合使用  </li>
+						<li>.table-striped：斑马线表格</li>
+						<li>.table-bordered：带边框的表格</li>
+						<li>.table-hover：鼠标悬停高亮的表格 </li>
+						<li>.table-condensed：紧凑型表格</li>
+					</ul>
+				<h4>在tr标签中添加一下类：</h4>
+					<ul>
+						<li>.active	:表示当前活动的信息</li>
+						<li>.success :表示成功或者正确的行为</li>
+						<li>.info :表示中立的信息或行为</li>
+						<li>.danger	:表示危险或者可能是错误的行为</li>
+						<li>.table-responsive：响应式表格</li>
+					</ul>
+				<h4>响应式表格：</h4>
+				<p>table作为子容器，div作为父容器  div class="table-responsive"</p>
+				<h3>表单  </h3>
+				<h4>创建基本表单 &lt;form&gt; 的规则：</h4>
+					<ol>
+						<li>向父  &lt;form&gt; 元素添加 role="form"。</li>
+						<li>把标签和控件放在一个带有 class .form-group 的 &lt;div&gt;//.form-group  相当于网格系统中的“row” 每行放一个form.group的div 中。这是获取最佳间距所必需的。</li>
+						<li>向所有的文本元素 &lt;input text&gt;、&lt;textarea&gt; 和 &lt;select&gt;添加 class ="form-control" //.form-control让控件在各种表单风格中样式不出错</li>
+					</ol>
+				<h4>分类：</h4>
+					<ul>
+						<li>水平表单： .form-horizontal 实现水平表单效果</li>
+						<li>内联表单： .form-inline  表单的控件都在一行内显示</li>
+					</ul>
+				<h4>控件尺寸：</h4>
+					<ul>
+						<li>.input-sm:让控件比正常大小更小  //input标签中,高度变化</li>
+						<li>.input-lg:让控件比正常大小更大</li>
+					</ul>
+				<h4>验证状态：</h4>
+
+					<ul>	 和font-group放在行包裹form组件div
+						<li>.has-warning:警告状态（黄色）</li>
+						<li>.has-error：错误状态（红色）</li>
+						<li>.has-success：成功状态（绿色）</li>
+						<li>.has-feedback 后面加图标，和123放一起</li>
+					</ul>			
+				<h3>图片</h3>
+					<ul>
+						<li>.img-responsive：响应式图片</li>
+						<li>.img-rounded：圆角图片</li>
+						<li>.img-circle：圆形图片</li>
+						<li>.img-thumbnail：缩略图片</li>
+					</ul>
+				<h3>辅助类</h3>
+					<ul>
+						<li>.pull-left：元素浮动到左边</li>
+						<li>.pull-right：元素浮动到右边</li>
+						<li>.center-block：设置元素为 display:block 并居中显示</li>
+						<li>.clearfix：清除浮动 配合使用</li>
+						<li>&lt;span class="caret"&gt;&lt;/span&gt;显示下拉式功能,三角形</li>
+						<li>&lt;label class="sr-only" for="pass"&gt;密码&lt;/label&gt;		除了屏幕阅读器外，其他设备上隐藏元素,用于屏幕阅读器的，帮助残障人士更好的访问网站</li>
+					</ul>
+				<h3>网格系统 </h3>
+				<p>Bootstrap 提供了一套响应式、移动设备优先的流式网格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列（默认）。</p>
+				<p>注：所有行必须放置在 .container class内，以便获得适当的对齐（alignment）和内边距（padding）。</p>
+				<h4>网格选项：</h4>
+					<ul>
+						<li>.col-xs- ： 自动（超小屏） </li>
+						<li>.col-sm- ：750px（小屏）</li>
+						<li>.col-md- ：970px（中屏）</li>
+						<li>.col-lg- ：1170px（大屏</li>
+						<li>.col-lg- ：1170px（大屏</li>
+					</ul>
+				<h4>列偏移：</h4>
+				<p> .col-md-offset-n   向右偏移n使得元素不紧挨着一起</p>
+				<h4>用法：</h4>
+				<pre>
+&lt;div class="container"&gt;	
+	&lt;h1&gt;Hello, world!&lt;/h1&gt;	
+    &lt;div class="row" &gt;	
+        &lt;div class="col-xs-6 col-md-offset-3" 
+        style="background-color: #dedef8;box-shadow: 
+        inset 1px -1px 1px #444, inset -1px 1px 1px #444;"&gt;	
+            &lt;p&gt;	示例文本
+            &lt;/p&gt;	
+        &lt;/div&gt;	
+    &lt;/div&gt;	
+&lt;/div&gt;	
+</pre>			<h3>按钮</h3>
+				<h4>基本样式：</h4>
+					<ul>
+						<li>.btn 基础按钮    //其他按钮样式和此类配合使用</li>
+						<li>.btn-default 默认按钮</li>
+						<li>.btn-primary 主要按钮</li>
+						<li>.btn-success 成功按钮</li>
+						<li>.btn-info 信息按钮 </li>
+						<li>.btn-warning 警告按钮 </li>
+						<li>.btn-danger 危险按钮</li>
+					</ul>
+				<h4>按钮尺寸：</h4>
+					<ul>
+						<li>.btn-lg 大型按钮</li>
+						<li>.btn-sm 小型按钮   </li>
+						<li>.btn-xs 超型按钮 </li>
+						<li>.btn-block  块状按钮 width：100%</li>
+					</ul>
+				<h4>按钮状态：</h4>
+					<ul>
+						<li>.active 活动状态：悬浮状态(:hover)，点击状态(:active)和焦点状态（:focus）</li>
+						<li>.disabled 禁用状态（带有鼠标样式）</li>
+					</ul>
+				<h4>按钮组：</h4>
+					<ul>
+						<li>.btn-group 包裹所有按钮btn</li>
+						<li>.btn-toolbar  包裹所有按钮组btn-group </li>
+						<li>.btn-group-*  设置按钮组大小-lg -sm -xs </li>
+						<li>.btn-group-vertical 垂直分组</li>
+					</ul>
+				<h3>下拉菜单 (非select) </h3>	
+				<h4>创建步骤：</h4>
+					<ol>
+						<li>使用一个名为“dropdown”的容器&lt;div&gt;包裹了整个下拉菜单元素</li>
+						<li>使用了一个 &lt;button&gt;按钮做为父菜单，并且定义类名“dropdown-toggle”和自定义“data-toggle”属性，且值必须和最外容器类名一致</li>
+						<li>下拉菜单项使用一个ul列表，并且定义一个类名为“dropdown-menu”下拉菜单默认是左对齐，如果你想让下拉菜单相对于父容器&lt;ul&gt;右对齐时，加一个“pull-right”或者 “dropdown-menu-right”类名</li>
+						<li>&lt;li&gt;中添加类名.divider来实现添加下拉分隔线的功能; .dropdown-header 每个组添加一个头部（标题);菜单项状态:当前状态（.active）和禁用状（.disabled）</li>
+						<li>class="caret" 三角形默认往下     若想往上向父 .btn-group 容器添加 .dropup 即可（按钮下拉）</li>
+					</ol>
+				<h4>示例：</h4>
+				<pre>
+&lt;div class="dropdown"&gt;
+    &lt;button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown"&gt;主题
+        &lt;span class="caret"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"&gt;
+        &lt;li role="presentation"&gt;
+            &lt;a role="menuitem" tabindex="-1" href="#"&gt;Java&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li role="presentation"&gt;
+            &lt;a role="menuitem" tabindex="-1" href="#">数据挖掘&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li role="presentation" class="divider"&gt;&lt;/li&gt;
+        &lt;li role="presentation"&gt;
+            &lt;a role="menuitem" tabindex="-1" href="#"&gt;分离的链接&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+				<h3>导航</h3>
+				<h4>基本样式（无序列表ul中的类）</h4>
+				<ul>
+					<li> .nav 基础 </li>
+					<li> .nav-tabs 标签形导航 </li>
+					<li> .nav-pills胶囊形（pills）导航 </li>
+					<li> .nav-stacked 垂直堆叠的导航</li>
+					<li> .nav-justified 自适应导航指的是导航占据容器全部宽度</li>
+				</ul>
+				<h4>导航状态（li中的类）</h4>
+				<ul>
+					<li>.active默认选中项    </li>
+					<li>.disabled禁用状态</li>
+					<li>data-toggle="tab"，则可以动态替换</li>
+				</ul>
+				<h3>导航栏</h3>
+				<h4>创建步骤：</h4>
+				<ol>
+					<li>向 &lt;nav&gt; 标签添加 class .navbar、.navbar-default， role="navigation"，有助于增加可访问性。</li>
+					<li>向 &lt;div&gt; 元素添加一个标题 class .navbar-header，内部包含了带有 class navbar-brand 的 &lt;a&gt; 元素。这会让文本看起来更大一号。 </li>
+					<li> 为了向导航栏添加链接，只需要简单地添加带有 class .nav、.navbar-nav 的无序列表ul即可。</li>
+				</ol>
+				<h4>响应式导航栏</h4>
+				<ol>
+					<li>ul正常布局, 外面套了一层div,添加类名:collapse,navbar-collapse或navbar-response-collapse </li>
+					<li>保证在窄屏时要显示的图标样式（固定写法)：</li>
+						<pre>
+&lt;button type="button" 
+   class="navbar-toggle" data-toggle="collapse"  data-target="#example-navbar-collapse"&gt;
+            &lt;span class="sr-only"&gt;切换导航&lt;/span&gt;
+            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+&lt;a class="navbar-brand" href="#"&gt; logo &lt;/a&gt;
+</pre>
+				</ol>
+				<h4>导航栏定位</h4>
+					<ul>
+						<li>固定定位： .navbar-fixed-top  导航条固定在浏览器窗口顶部； .navbar-fixed-bottom：导航条固定在浏览器窗口底部 </li>
+						<li>静态定位：.navbar-static-top 随着页面向下滚动而消失</li>
+					</ul>
+				<h4>反色导航条：.navbar-inverse</h4>
+				<h4>导航栏元素</h4>
+					<ul>
+						<li>按钮 .btn .btn-default .navbar-btn</li>
+						<li>文本 .navbar-text</li>
+						<li>普通链接 .navbar-link</li>
+						<li>表单 form .navbar-form .navbar-left 相左浮动</li>
+					</ul>
+				<h4>面包屑导航： ul.breadcrumb</h4>
+				<h3>分页</h3>
+				<h4>默认的分页：无序列表ul.pagination</h4>
+				<h4>分页样式：</h4>
+				    <ul>
+				    	<li>分页状态：li.disabled、li.active</li>
+				    	<li>分页大小：ul.pagination-*   可以接-lg、-sm 、xs</li>
+				    </ul>
+				<h4>翻页 略</h4>
+				<h3>标签和徽章</h3>
+				<h4>标签</h4>
+				<p>基本标签： span.label </p>
+				<p>使用class label-default、label-primary、label-success、label-info、label-warning、label-danger 来改变标签的外观</p>
+				<h4>徽章</h4>
+				<p>基本徽章： span.badge</p>
+
+				<h3>进度条</h3>
+				<h4>基本进度条：</h4>
+					<ol>
+						<li>添加一个带有 class .progress 的 &lt;div&gt;。</li>
+						<li>接着，在上面的 &lt;div&gt; 内，添加一个带有 class .progress-bar 的空的 &lt;div&gt;。</li>
+						<li>添加一个带有百分比表示的宽度的 style 属性，例如 style="width: 60%"; 表示进度条在 60% 的位置。</li>
+					</ol>
+				<h4>条纹进度条：</h4>
+					<p>在 class .progress 的 &lt;div&gt;中添加 .progress-striped</p>
+				<h4>动画进度条：</h4>
+					<p>在 class .progress .progress-striped的 &lt;div&gt;同时添加.active。</p>
+				<h3>媒体对象</h3>
+				<h4>基本媒体元素</h4>
+					<ul>
+						<li>媒体对像的容器：常使用“media”类名表示，用来容纳媒体对象的所有内容</li>
+						<li>媒体对像的对象：常使用“media-object”表示，就是媒体对象中的对象，常常是图片</li>
+						<li>媒体对象的主体：常使用“media-body”表示，就是媒体对像中的主体内容，可以是任何元素，常常是图片侧边内容</li>
+						<li>媒体对象的标题：常使用“media-heading”表示，就是用来描述对象的一个标题，此部分可选</li>
+						<li>除了上面四个部分之外，在Bootstrap框架中还常常使用.media-left 或者.media-right 来控制媒体对象中的对象浮动方式</li>
+					</ul>
+				<h3>列表组</h3>
+					<ul>
+						<li>向元素 &lt;ul&gt;添加 class .list-group。</li>
+						<li>向 &lt;li&gt; 添加 class .list-group-item。</li>
+					</ul>
+				<h3>面板</h3>
+				<h4>基础面板：向 &lt;div&gt;元素添加 class .panel 和 class .panel-default</h4>
+				<h4>面板标题：</h4>
+					<ul>
+						<li>使用 .panel-heading class 可以很简单地向面板添加标题容器。</li>
+						<li>使用带有 .panel-title class 的 &lt;h1&gt;-&lt;h6&gt; 来添加预定义样式的标题。</li>
+					</ul>
+				<h4>面板脚注：把按钮或者副文本放在带有class .panel-footer 的  &lt;div&gt;中</h4>
+				<h4>带语境色彩的面板：使用语境状态类 panel-primary、panel-success、panel-info、panel-warning、panel-danger，来设置带语境色彩的面板。</h4>
+
+				<h2>Bootstrap 字体图标篇</h2>
+					<h3>glyphicon</h3>
+					<p><a href="http://www.runoob.com/try/demo_source/bootstrap-glyph-customization.htm">http://www.runoob.com/try/demo_source/bootstrap-glyph-customization.htm</a>自己定制</p>
+					<h3>font-awesome</h3>
+					<p><a href="http://fontawesome.dashgame.com/">http://fontawesome.dashgame.com/</a>中文官网</p>
+					<p>以上两款Bootstrap字体图标使用方法都不难，不做介绍。</p>
+
+				<h2>Bootstrap JS插件篇(13种)</h2>
+					<h4>
+						<ul>
+							<li>动画过渡（Transitions）:对应的插件文件“transition.js”</li>
+							<li>模态弹窗（Modal）:对应的插件文件“modal.js”</li>
+							<li>下拉菜单（Dropdown）：对应的插件文件“dropdown.js”</li>
+							<li>滚动侦测（Scrollspy）：对应的插件文件“scrollspy.js”</li>
+							<li>选项卡（Tab）：对应的插件文件“tab.js”</li>
+							<li>提示框（Tooltips）：对应的插件文件“tooltop.js”</li>
+							<li>弹出框（Popover）：对应的插件文件“popover.js”</li>
+							<li>警告框（Alert）：对应的插件文件“alert.js”</li>
+							<li>按钮（Buttons）：对应的插件文件“button.js”</li>
+							<li>折叠/手风琴（Collapse）：对应的插件文件“collapse.js”</li>
+							<li>图片轮播Carousel：对应的插件文件“carousel.js”</li>
+							<li>自动定位浮标Affix：对应的插件文件“affix.js”</li>
+						</ul>
+					</h4>
+					<p>各个插件具体用法：略</p>
+
+				<hr>
+					<p></p>
+					<p>标签：
+						<button class="btn btn-primary btn-xs"><a href="">其他</a> </button>&nbsp;<button class="btn btn-success btn-xs"><a href="">Bootstrap</a> </button>
+					</p>	
+					 <div class="share">
+						<div class="good"><span class="glyphicon glyphicon-thumbs-up"></span><br><span>2</span>
+						</div>	
+					 </div>
+					<div class="talk">
+					 	<h2>评论：</h2>
+					 	<hr>
+					 	<form action="#"  class="form-horizontal" role="form">
+					 		<div class="form-group">
+ 								<label for="name" class="col-sm-2 control-label">昵称</label>
+ 								<div class="col-sm-10">
+ 									<input type="text" class="form-control"  id="fname" placeholder="请输入昵称">
+ 								</div>
+ 							</div>
+ 							<div class="form-group">
+ 								<label for="content" class="col-sm-2 control-label" >留言内容</label>
+ 								<div class="col-sm-10">
+ 									<textarea name="content" id="fcontent"  class="form-control" placeholder="保持140个字符内"></textarea>
+ 								</div>
+ 							</div>
+ 							<div class="form-group">
+ 								<div class="col-sm-offset-2 col-sm-10">
+ 									<button type="submit" class="btn btn-default submit">提交</button>
+ 								</div>
+ 							</div>
+					 	</form>
+					 </div>
+				</div>
+
+	  		</div>	
+			<!-- 侧边栏 -->
+				<aside class="container col-sm-3">
+					<div class="intro">
+						<div class="head-icon"><img src="icon/head-icon.jpg"  class="img-circle"  		alt="我的头像">
+							<h3>朱厚强<br></h3>
+							<em>一名兴趣使然的Web Designer</em>
+						</div><br>
+						<div class="contact">
+							<ul>
+								<li><a href="weixin.html" target="_blank"  class="contact-1" ></a></li>
+								<li><a href="http://wpa.qq.com/msgrd?v=3&uin=245773708&site=qq&menu=yes" title="qq：245773708" class="contact-2"></a></li>
+								<li><a href="#" title="微博账号被封" class="contact-3"></a></li>
+								<li><a href="https://github.com/indoorsfish" target="_blank" title="github" class="contact-4" ></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="weixin"><img src="images/wx.png" alt="weixins.png"></div>
+						<div class="tab">
+							<p class="lead">站内搜索&nbsp;<span class="glyphicon glyphicon-search" style="font-size: 14px;"></span></p>
+							<form action="blog-all.html" role="form">
+								<div class="form-group input-group">	
+									<input type="text"  class ="form-control" placeholder="search...">
+									<span class="input-group-btn">
+	                      			  <button class="btn btn-primary" type="button">搜索</button>
+	                    			</span>
+								</div>
+							</form>
+						</div>
+						<div class="tab"> 
+							<p class="lead">标签分类&nbsp;<span class="glyphicon glyphicon-tags" style="font-size: 14px;"></span></p>
+							<div class="summary"> 
+								<button class="btn btn-primary btn-xs"><a href="blog-all.html">全部</a><span class="badge"></span></button>
+								<button class="btn btn-success btn-xs html-btn"><a href="blog-all.html" >HTML</a><span class="badge"></span> </button>
+								<button class="btn btn-info btn-xs css-btn"><a href="blog-all.html" >CSS</a><span class="badge"></span> </button>
+								<button class="btn btn-warning btn-xs javascript-btn"><a href="blog-all.html" class="">JavaScript</a><span class="badge"></span></button> 
+								<button class="btn btn-danger btn-xs jquery-btn"><a href="blog-all.html" >JQuery</a><span class="badge"></span></button>
+								<button class="btn btn-primary btn-xs other-btn"><a href="blog-all.html">其他</a> </button>
+							</div>
+						</div>
+						<div class="tab">
+						  <p class="lead">日历&nbsp;<span class="glyphicon glyphicon-calendar" style="font-size: 14px;"></span></p>
+						<div id="calendar">
+						<a href="##" class="lastMonth"><</a> 
+						<a href="##" class="nextMonth">></a>
+						<h4>2013年10月</h4>
+						<ul class="week">
+							<li>日</li>
+							<li>一</li>
+							<li>二</li>
+							<li>三</li>
+							<li>四</li>
+							<li>五</li>
+							<li>六</li>
+						</ul>
+						<ul class="dateList"></ul>
+						</div>
+					 </div>
+				</aside>
+				</div>
+			</div>
+
+			<footer class="foot">
+				<p>Copyright© 2018 朱厚强的博客</p>
+			</footer>
+			<div id="board">  
+				<p id="goTop"><span class="glyphicon glyphicon-chevron-up"></span></p> 
+				<p id="mb"><a href="留言板.html" title="留言版"><span class="glyphicon glyphicon-envelope"></span></a></p> 
+			</div>  
+
+
+
+     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+     <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="javascript/act.js"></script>
+ </body>
+ </html>
