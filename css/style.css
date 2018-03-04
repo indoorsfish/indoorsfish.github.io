@@ -36,10 +36,6 @@
 		height: 51px;
 		overflow: hidden;
 	}
-	header .navbar-brand{
-		font-family: KaiTi;
-		font-size: 30px;
-	}
 	header nav.navbar{
 		height: 51px;
 		overflow: auto;
