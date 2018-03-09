@@ -36,33 +36,36 @@
 		height: 51px;
 		overflow: hidden;
 	}
-	header nav.navbar{
+	body>header nav.navbar{
 		height: 51px;
 		overflow: auto;
 		-ms-overflow-style:none;
         overflow:-moz-scrollbars-none;
 	}
-	header nav.navbar::-webkit-scrollbar {
-    display: none;
+	body>header nav.navbar::-webkit-scrollbar {
+    	display: none;
 	}
-	header	#example-navbar-collapse{
-		float: right;
-		margin-right: -15px;
+	body>header	#example-navbar-collapse{
+		margin-left: 546px;
+
 	}
-	@media only screen and (max-width: 700px){
-		header  #example-navbar-collapse{
-			float: left;
+	@media only screen and (max-width: 750px){
+		body>header  #example-navbar-collapse{
+			margin-left: 0px;
 		}
+		body>header #example-navbar-collapse ul.nav>li:hover{
+		background-color:transparent;
 	}
-	header ul.nav>li:hover{
+	}
+	body>header ul.nav>li:hover{
 		background-color:#00A2E9;
 	}
-	header nav i{
+	body>header nav i{
 		display: inline-block;
 		margin-top: 8px;
 		transition:transform .5s linear	;
 	}
-	header nav i:hover{
+	body>header nav i:hover{
 		transform: rotate(-360deg);
 		-ms-transform: rotate(-360deg); /* IE 9 */
 		-webkit-transform: rotate(-360deg); /* Safari and Chrome */
